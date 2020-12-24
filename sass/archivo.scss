@@ -1,0 +1,380 @@
+$fonttitle:'Baloo Bhaina 2', cursive;
+
+body{
+	background-image: radial-gradient(#dae3f2,#b3c6e6);
+	font-family: 'PT Sans Narrow', sans-serif;
+	line-height: 1,5;
+	font-size: 25px;
+	margin: 0;
+	padding: 0;
+}
+/*header*/
+.header__logo{
+    padding: 40px 0px 20px 0px; 
+	text-align: center;
+	background-image: radial-gradient(#dae3f2 50%,#b3c6e6);
+		&--sub h3{
+			font-family: $fonttitle;
+			font-size: 27px;
+			padding-top: 2px;
+		}
+}
+.navbar{
+	padding: 15px 0px;
+}
+.navbar-brand{
+	font-size: 28px;    
+}
+.navbar-brand-desaparecer{
+    display: none;
+}
+.navbar-nav{
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+    li a{
+        color: #fff;
+		font-size: 25px;
+		&:hover{
+			color: lightblue;
+			text-decoration: underline;
+			}
+		}
+}
+/*Contenido index.html*/
+.titulo__principal{
+    font-family: $fonttitle;
+    margin: 50px 0px 40px 0px;
+    text-align: center;
+        h1{
+			font-size: 70px;
+	        color: black;
+        }
+}
+.titulo__principal--animacion{
+	animation-duration: 3s;
+	animation-name: titulo;
+}
+@keyframes titulo{
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: .7;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.container__row--ubicacion{
+	padding-top: 80px;
+}
+.titulo__seccion{
+	margin: 50px 0px 50px 0px;
+	text-align: center;
+		h2{
+			font-family: $fonttitle;
+			font-size: 55px;
+		}
+}
+.container__productos{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	box-shadow: 1px 1px 5px;
+	padding: 50px 0px;
+		.container__productos--texto{
+			text-align: center;
+			margin-top: 20px;
+			font-size: 30px;
+		}
+		.container__productos--imagen{
+			border-style: double;
+			padding: 5px;
+		}
+}
+.container__articulo{
+	box-shadow: 1px 1px 5px #000;
+	padding: 15px;
+	margin: 20px 0px;
+		.container__articulo__texto{
+			text-align: center;
+				#links{
+					text-decoration: none;
+					color: black;
+				}
+		}
+		.container__articulo__carousel{
+			margin-bottom: 30px;
+		}
+}
+/*Contenido conocenos.html*/
+.container__intro{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	box-shadow: 1px 1px 5px;
+		&--texto{
+			margin: 15px auto;
+		}
+		&--imagen{
+			margin: 15px auto;
+				img{
+					border: double 1px #000;
+					padding: 5px;
+				}
+		} 
+}
+.infografia{
+	display: grid;
+	grid-template-rows: 50% 50%;
+	grid-template-columns: 50% 50%;
+	grid-column-gap: 30px;
+	grid-row-gap: 50px;
+	padding: 20px;
+	margin-top: 40px;
+	box-shadow: 1px 1px 5px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+		h3{
+			font-family: $fonttitle;
+			font-size: 40px;
+		}
+		&--listas{
+			list-style-type: none;
+		}
+}
+/*Contenido productos.html*/
+.box__productos{
+	display: flex;
+	flex-direction: column;
+		&__fundas{
+			display: grid;
+			grid-template-columns: 60% 40%;
+		}
+		&__chapas{
+			display: grid;
+			grid-template-columns: 40% 60%;
+		}
+		&__popsockets{
+			display: grid;
+			grid-template-columns: 60% 40%;
+		}
+}
+		@each $producto in fundas, chapas, popsockets{
+			.box__productos__#{$producto}{
+				box-shadow: 1px 1px 5px;
+				padding: 15px;
+				background-color: #427ddb;
+			}
+		}
+		@each $producto in fundas, chapas, popsockets{
+			.box__productos__#{$producto}--texto{
+				align-self: center;
+			}
+		}	
+		@each $producto in fundas, chapas, popsockets{
+			.box__productos__#{$producto}--imagen img{
+				border: double 1px #000;
+				padding: 4px;
+			}
+		}
+/*galeria.html*/
+@mixin subtitulos {
+	margin: 30px 0px 30px 0px;
+	padding: 8px;
+	text-align: center;
+	background: rgba(56, 102, 181, .5);
+}
+.contenedor{
+	h3{
+		@include subtitulos;
+	}
+	&__set--imagen{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+			img{
+				height: 250px;
+				width: 250px;
+				padding: 10px;
+				border-style: double;
+				transition: 2s;
+					&:hover{
+						height: 350px;
+						width: 350px;
+					}
+			}
+	}
+	&__dobleset{
+		display: grid;
+		grid-template-rows: 50% 50%;
+		grid-row-gap: 50px;
+			&--imagen{
+				@extend .contenedor__set--imagen
+			}
+	}
+	&__tipografia{
+		text-align: center;
+		margin-bottom: 40px;
+			img{
+				height: 350px;
+				width: 250px;
+				transition: 2s;
+					&:hover{
+						height: 450px;
+						width: 350px;
+					}
+			}
+	}
+}
+/*contacto.html*/
+.box__contacto{
+	display: grid;
+		&__redes{
+			text-align: center;
+				&--iconos{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+					padding: 40px 100px;
+						& li{
+							list-style: none;
+								& a{
+									color: black;
+									text-decoration: none;
+								}
+						}
+				}
+		}
+}
+.box__formulario{
+	margin: 30px auto;
+	box-shadow: 1px 1px 7px #000;
+		.input-group--texto{
+			font-size: 20px;
+			padding: 5px;
+			border: 1px inset #000;
+			/*background: rgb(184, 179, 179);*/
+			background: #dae3f2;
+		}
+		.form-select{
+			transform: scale(1,0.8);
+			background: #dae3f2;
+		}
+		.form-control{
+			border: 2px outset rgb(37, 37, 180);
+			background-color: #dae3f2;
+		}
+}		
+/*Footer*/
+.bloque__footer{
+	background-image: linear-gradient(to right, #427ddb, #000);
+	color: white;
+		.bloque__footer--titulo h2{
+			font-size: 45px;
+		}
+		.bloque__footer--lista ul li a{
+			color: white;
+			font-size: 25px;
+		}
+		.bloque__footer--lista ul li button{
+			color: white;
+			font-size: 25px;
+		}
+		.bloque__footer--lista ul li button:hover{
+			text-decoration: none;
+		}
+		.modal-header{
+			background-image: linear-gradient(to right, #427ddb, #000);
+				.modal-header--titulo{
+					color: #fff;
+					font-size: 40px;
+				}
+		}
+		.modal-body{
+			background-image: radial-gradient(#dae3f2,#b3c6e6);
+			color: #000;
+			font-size: 18px;
+				.card{
+					background-image: radial-gradient(#dae3f2,#b3c6e6);
+						button{
+							color: #000;
+							font-size: 20px;
+						}
+				}
+		}
+		.modal-footer{
+			background-image: linear-gradient(to right, #427ddb, #000);
+				button{
+					font-size: 20px;
+				}
+		}
+}
+@media(max-width: 767px){
+	.navbar-brand-aparecer{
+		display: contents;
+	}
+	.titulo__principal{
+			h1{
+				font-size: 68px;
+			}
+	}
+	.container__row--ubicacion{
+		padding-top: 0px;
+		text-align: center;
+	}
+	@each $producto in fundas, chapas, popsockets{
+		.box__productos__#{$producto}{
+			display: flex;
+			flex-direction: column;
+			align-content: space-around;
+		}
+	}
+	.box__productos__chapas{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	.contenedor__set--imagen{
+		margin-right: 20px;
+		display: grid;
+		grid-template-rows: 50% 50%;
+		grid-template-columns: 50% 50%;
+		grid-row-gap: 20px;
+		grid-column-gap: 20px;
+		justify-items: center;
+		align-items: center;
+			img:hover{
+				height: 278px;
+				width: 278px;
+			}
+	}
+	.bloque__footer .modal-body{
+		font-size: 15px;
+			.card button{
+				font-size: 18px;
+			}
+	}
+}
+@media(min-width: 768px) and (max-width: 1199px){
+	.container__row--ubicacion{
+		padding-top: 15px;
+		text-align: left;
+	}
+	.container__row--imagen img{
+		height: 350px;
+		width: 350px;
+		padding-top: 15px;
+	}
+	.contenedor__set--imagen{
+		display: grid;
+		grid-template-rows: 50% 50%;
+		grid-template-columns: 50% 50%;
+		grid-row-gap: 20px;
+		grid-column-gap: 20px;
+		justify-items: center;
+		align-items: center; 
+	}
+}
