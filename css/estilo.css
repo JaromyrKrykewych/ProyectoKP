@@ -143,17 +143,17 @@ body {
 .box__productos__fundas {
   box-shadow: 1px 1px 5px;
   padding: 15px;
-  background-color: #427ddb; }
+  background-color: #123469; }
 
 .box__productos__chapas {
   box-shadow: 1px 1px 5px;
   padding: 15px;
-  background-color: #427ddb; }
+  background-color: #123469; }
 
 .box__productos__popsockets {
   box-shadow: 1px 1px 5px;
   padding: 15px;
-  background-color: #427ddb; }
+  background-color: #123469; }
 
 .box__productos__fundas--texto {
   align-self: center; }
@@ -334,3 +334,11 @@ body {
     grid-column-gap: 20px;
     justify-items: center;
     align-items: center; } }
+
+@media (min-width: 360px) and (max-width: 375px) {
+  .header__logo img {
+    height: 180px; }
+  .header__logo--sub h3 {
+    font-size: 24px; }
+  .titulo__principal h1 {
+    font-size: 40px; } }

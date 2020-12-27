@@ -167,7 +167,7 @@ body{
 			.box__productos__#{$producto}{
 				box-shadow: 1px 1px 5px;
 				padding: 15px;
-				background-color: #427ddb;
+				background-color: #123469;
 			}
 		}
 		@each $producto in fundas, chapas, popsockets{
@@ -376,5 +376,16 @@ body{
 		grid-column-gap: 20px;
 		justify-items: center;
 		align-items: center; 
+	}
+}
+@media(min-width: 360px) and (max-width: 375px){
+	.header__logo img{
+		height: 180px;
+	}
+	.header__logo--sub h3{
+		font-size: 24px;
+	}
+	.titulo__principal h1{
+		font-size: 40px;
 	}
 }
