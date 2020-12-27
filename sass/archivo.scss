@@ -313,7 +313,7 @@ body{
 				}
 		}
 }
-@media(max-width: 767px){
+@media(min-width: 576px) and (max-width: 767px){
 	.navbar-brand-aparecer{
 		display: contents;
 	}
@@ -379,13 +379,10 @@ body{
 	}
 }
 @media(min-width: 360px) and (max-width: 375px){
-	.header__logo img{
-		height: 180px;
-	}
-	.header__logo--sub h3{
-		font-size: 24px;
-	}
 	.titulo__principal h1{
-		font-size: 40px;
+		font-size: 35px;
+	}
+	.titulo__seccion h2{
+		font-size: 25px;
 	}
 }
