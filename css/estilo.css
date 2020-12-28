@@ -278,7 +278,13 @@ body {
     .bloque__footer .modal-footer button {
       font-size: 20px; }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 360px) and (max-width: 375px) {
+  .titulo__principal h1 {
+    font-size: 35px; }
+  .titulo__seccion h2 {
+    font-size: 25px; } }
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
   .navbar-brand-aparecer {
     display: contents; }
   .titulo__principal h1 {
@@ -318,7 +324,7 @@ body {
     .bloque__footer .modal-body .card button {
       font-size: 18px; } }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .container__row--ubicacion {
     padding-top: 15px;
     text-align: left; }
@@ -334,9 +340,3 @@ body {
     grid-column-gap: 20px;
     justify-items: center;
     align-items: center; } }
-
-@media (min-width: 360px) and (max-width: 375px) {
-  .titulo__principal h1 {
-    font-size: 35px; }
-  .titulo__seccion h2 {
-    font-size: 25px; } }
