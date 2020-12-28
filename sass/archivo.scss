@@ -167,7 +167,7 @@ body{
 			.box__productos__#{$producto}{
 				box-shadow: 1px 1px 5px;
 				padding: 15px;
-				background-color: #123469;
+				background-color: #1f55ac;
 			}
 		}
 		@each $producto in fundas, chapas, popsockets{
@@ -314,12 +314,62 @@ body{
 		}
 }
 @media screen and (min-width: 360px) and (max-width: 375px){
-	.titulo__principal h1{
-		font-size: 35px;
+	/*Header*/
+	.navbar-brand-aparecer{
+		display: contents;
 	}
-	.titulo__seccion h2{
-		font-size: 25px;
+	.navbar-nav{
+		align-items: center;
 	}
+	.header__logo{
+			img{
+				height: 160px;
+			}
+			h3{
+				font-size: 20px;
+			}
+	}
+	/*General*/
+	.titulo__principal {
+			h1{
+				font-size: 42px;
+			}
+	}
+	.titulo__seccion{
+			h2{
+				font-size: 32px;
+			}
+	}
+	/*Index*/
+	.container__row--ubicacion{
+		padding-top: 10px;
+			p{
+				text-align: center;
+			}
+	}
+	.container__row--imagen{
+		padding-top: 10px;
+			img{
+				height: 330px;
+				width: 300px;
+			}
+	}
+	.container__productos{
+		box-shadow: none;
+		padding: 0px;
+			.container__productos--box{
+				box-shadow: 1px 1px 3px;
+				padding: 10px;
+				margin: 5px;
+					.container__productos--imagen{
+						img{
+							height: 300px;
+							width: 300px;
+						}
+					}
+			}	
+	}
+	
 }
 @media screen and (min-width: 576px) and (max-width: 767px){
 	.navbar-brand-aparecer{
