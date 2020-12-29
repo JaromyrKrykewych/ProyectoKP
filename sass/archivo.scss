@@ -405,6 +405,7 @@ body{
 			}
 			p, ul, li{
 				text-align: center;
+				padding: 0px;
 			}
 	}
 	/*productos*/
@@ -444,8 +445,7 @@ body{
 	.box__contacto{
 			&__redes{
 				h3{
-					font-size: 22px;
-					
+					font-size: 22px;	
 				}
 					&--iconos{
 						display: grid;
@@ -459,6 +459,7 @@ body{
 	}
 	/*footer*/
 	.bloque__footer{
+		background-image: linear-gradient(to bottom, #427ddb, #000);
 		.bloque__footer--titulo h2{
 			font-size: 40px;
 		}
@@ -467,6 +468,21 @@ body{
 				display: flex;
 				flex-direction: column;
 			}
+		}
+		.modal-header--titulo{
+			text-align: left;
+		}
+		.modal-body{
+			font-size: 13px;
+				.card{
+					padding: 0px;
+					margin: 0px;
+						button{
+							font-size: 14px;
+							padding: 0px;
+							margin: 0px;
+						}	
+				} 
 		}
 	}
 }

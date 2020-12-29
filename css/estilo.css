@@ -337,7 +337,8 @@ body {
     .infografia h3 {
       font-size: 30px; }
     .infografia p, .infografia ul, .infografia li {
-      text-align: center; }
+      text-align: center;
+      padding: 0px; }
   /*productos*/
   .box__productos__fundas {
     display: flex;
@@ -376,11 +377,24 @@ body {
     padding: 0px;
     padding-top: 15px; }
   /*footer*/
-  .bloque__footer .bloque__footer--titulo h2 {
-    font-size: 40px; }
-  .bloque__footer .bloque__footer--lista li {
-    display: flex;
-    flex-direction: column; } }
+  .bloque__footer {
+    background-image: linear-gradient(to bottom, #427ddb, #000); }
+    .bloque__footer .bloque__footer--titulo h2 {
+      font-size: 40px; }
+    .bloque__footer .bloque__footer--lista li {
+      display: flex;
+      flex-direction: column; }
+    .bloque__footer .modal-header--titulo {
+      text-align: left; }
+    .bloque__footer .modal-body {
+      font-size: 13px; }
+      .bloque__footer .modal-body .card {
+        padding: 0px;
+        margin: 0px; }
+        .bloque__footer .modal-body .card button {
+          font-size: 14px;
+          padding: 0px;
+          margin: 0px; } }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .navbar-brand-aparecer {
