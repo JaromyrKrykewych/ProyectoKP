@@ -269,6 +269,19 @@ body{
 			background-color: #dae3f2;
 		}
 }		
+.formulario__chico{
+	margin: 20px auto;
+	box-shadow: 1px 1px 3px;
+		label{
+			font-size: 23px;
+		}
+		input, textarea, option{
+			font-size: 21px;
+		}
+		select{
+			padding: 0px 3px;
+		}
+}
 /*Footer*/
 .bloque__footer{
 	background-image: linear-gradient(to right, #427ddb, #000);
@@ -313,7 +326,7 @@ body{
 				}
 		}
 }
-@media screen and (min-width: 360px) and (max-width: 375px){
+@media screen and (max-width: 575px){
 	/*Header*/
 	.navbar-brand-aparecer{
 		display: contents;
@@ -330,6 +343,9 @@ body{
 			}
 	}
 	/*General*/
+	body{
+		font-size: 24px;
+	}
 	.titulo__principal {
 			h1{
 				font-size: 42px;
@@ -337,7 +353,7 @@ body{
 	}
 	.titulo__seccion{
 			h2{
-				font-size: 32px;
+				font-size: 35px;
 			}
 	}
 	/*Index*/
@@ -369,11 +385,98 @@ body{
 					}
 			}	
 	}
-	
+	/*conocenos.html*/
+	.container__intro{
+			.container__intro--texto{
+				padding: 5px;
+			}
+			.container__intro--imagen{
+				img{
+					height: 300px;
+					width: 300px;
+				}
+			}
+	}
+	.infografia{
+		display: flex;
+		flex-direction: column;
+			h3{
+				font-size: 30px;
+			}
+			p, ul, li{
+				text-align: center;
+			}
+	}
+	/*productos*/
+	@each $producto in fundas, chapas, popsockets{
+		.box__productos__#{$producto}{
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	.box__productos__chapas{
+		flex-direction: column-reverse;
+			&--imagen{
+				img{
+					width: 320px;
+					height: 300px;
+				}
+			}
+	}
+	/*galeria*/
+	.contenedor__set--imagen{
+		display: grid;
+		grid-template-rows: repeat(4,1fr);
+		row-gap: 15px;
+		justify-content: center;
+			img:hover{
+				height: 278px;
+				width: 278px;
+			}
+	}
+	.contenedor__tipografia{
+		img:hover{
+			height: 380px;
+			width: 300px;
+		}
+	}
+	/*contacto*/
+	.box__contacto{
+			&__redes{
+				h3{
+					font-size: 22px;
+					
+				}
+					&--iconos{
+						display: grid;
+						grid-template-rows: repeat(2, 1fr);
+						row-gap: 15px;
+						align-content: stretch;
+						padding: 0px;
+						padding-top: 15px;
+					}
+			}
+	}
+	/*footer*/
+	.bloque__footer{
+		.bloque__footer--titulo h2{
+			font-size: 40px;
+		}
+		.bloque__footer--lista{
+			li{
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
 }
+
 @media screen and (min-width: 576px) and (max-width: 767px){
 	.navbar-brand-aparecer{
 		display: contents;
+	}
+	.navbar-nav{
+		align-items: center;
 	}
 	.titulo__principal{
 			h1{
@@ -434,5 +537,15 @@ body{
 		grid-column-gap: 20px;
 		justify-items: center;
 		align-items: center; 
+	}
+}
+@media screen and (min-width: 801px){
+	.formulario__800{
+		display: none;
+	}
+}
+@media screen and (max-width: 800px){
+	.formulario__801{
+		display: none;
 	}
 }
