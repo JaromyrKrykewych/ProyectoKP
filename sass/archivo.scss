@@ -107,6 +107,17 @@ body{
 		}
 		.container__articulo__carousel{
 			margin-bottom: 30px;
+				.carousel-inner{
+					box-shadow: 1px 1px 3px;
+						.carousel-item{
+							padding: 15px;
+								img{
+									height: 500px;
+									width: 450px;
+									border: solid 2px #000;
+								}
+						}
+				}
 		}
 }
 /*Contenido conocenos.html*/
@@ -203,8 +214,8 @@ body{
 				border-style: double;
 				transition: 2s;
 					&:hover{
-						height: 350px;
-						width: 350px;
+						height: 320px;
+						width: 320px;
 					}
 			}
 	}
@@ -224,8 +235,8 @@ body{
 				width: 250px;
 				transition: 2s;
 					&:hover{
-						height: 450px;
-						width: 350px;
+						height: 420px;
+						width: 320px;
 					}
 			}
 	}

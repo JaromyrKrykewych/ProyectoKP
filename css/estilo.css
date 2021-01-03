@@ -93,6 +93,14 @@ body {
       color: black; }
   .container__articulo .container__articulo__carousel {
     margin-bottom: 30px; }
+    .container__articulo .container__articulo__carousel .carousel-inner {
+      box-shadow: 1px 1px 3px; }
+      .container__articulo .container__articulo__carousel .carousel-inner .carousel-item {
+        padding: 15px; }
+        .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
+          height: 500px;
+          width: 450px;
+          border: solid 2px #000; }
 
 /*Contenido conocenos.html*/
 .container__intro {
@@ -194,8 +202,8 @@ body {
     border-style: double;
     transition: 2s; }
     .contenedor__set--imagen img:hover, .contenedor__dobleset--imagen img:hover {
-      height: 350px;
-      width: 350px; }
+      height: 320px;
+      width: 320px; }
 
 .contenedor__dobleset {
   display: grid;
@@ -210,8 +218,8 @@ body {
     width: 250px;
     transition: 2s; }
     .contenedor__tipografia img:hover {
-      height: 450px;
-      width: 350px; }
+      height: 420px;
+      width: 320px; }
 
 /*contacto.html*/
 .box__contacto {
