@@ -1,7 +1,10 @@
 $fonttitle:'Baloo Bhaina 2', cursive;
+$color1: #dae3f2;
+$color2: #b3c6e6;
+$color3: #4974bb;
 
 body{
-	background-image: radial-gradient(#dae3f2,#b3c6e6);
+	background-color: $color2;
 	font-family: 'PT Sans Narrow', sans-serif;
 	line-height: 1,5;
 	font-size: 25px;
@@ -12,7 +15,7 @@ body{
 .header__logo{
     padding: 40px 0px 20px 0px; 
 	text-align: center;
-	background-image: radial-gradient(#dae3f2 50%,#b3c6e6);
+	background-image: radial-gradient($color1 50%, $color2);
 		&--sub h3{
 			font-family: $fonttitle;
 			font-size: 27px;
@@ -66,9 +69,12 @@ body{
 		opacity: 1;
 	}
 }
-.container__row--ubicacion{
-	padding-top: 80px;
+.container{
+		.container__row--ubicacion{
+			padding-top: 80px;
+		}
 }
+
 .titulo__seccion{
 	margin: 50px 0px 50px 0px;
 	text-align: center;
@@ -223,6 +229,7 @@ body{
 		display: grid;
 		grid-template-rows: 50% 50%;
 		grid-row-gap: 50px;
+		margin-bottom: 30px;
 			&--imagen{
 				@extend .contenedor__set--imagen
 			}
@@ -295,7 +302,7 @@ body{
 }
 /*Footer*/
 .bloque__footer{
-	background-image: linear-gradient(to right, #427ddb, #000);
+	background-image: linear-gradient(to right, $color3, rgb(11, 11, 160));
 	color: white;
 		.bloque__footer--titulo h2{
 			font-size: 45px;
@@ -395,6 +402,17 @@ body{
 						}
 					}
 			}	
+	}
+	.container__articulo{
+			.container__articulo__carousel{
+					.carousel-inner{
+							.carousel-item{
+									img{
+										height: 300px;
+									}
+							}
+					}
+			}
 	}
 	/*conocenos.html*/
 	.container__intro{

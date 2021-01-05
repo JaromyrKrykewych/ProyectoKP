@@ -1,5 +1,5 @@
 body {
-  background-image: radial-gradient(#dae3f2, #b3c6e6);
+  background-color: #b3c6e6;
   font-family: 'PT Sans Narrow', sans-serif;
   line-height: 1,5;
   font-size: 25px;
@@ -57,7 +57,7 @@ body {
   100% {
     opacity: 1; } }
 
-.container__row--ubicacion {
+.container .container__row--ubicacion {
   padding-top: 80px; }
 
 .titulo__seccion {
@@ -208,7 +208,8 @@ body {
 .contenedor__dobleset {
   display: grid;
   grid-template-rows: 50% 50%;
-  grid-row-gap: 50px; }
+  grid-row-gap: 50px;
+  margin-bottom: 30px; }
 
 .contenedor__tipografia {
   text-align: center;
@@ -265,7 +266,7 @@ body {
 
 /*Footer*/
 .bloque__footer {
-  background-image: linear-gradient(to right, #427ddb, #000);
+  background-image: linear-gradient(to right, #4974bb, #0b0ba0);
   color: white; }
   .bloque__footer .bloque__footer--titulo h2 {
     font-size: 45px; }
@@ -333,6 +334,8 @@ body {
       .container__productos .container__productos--box .container__productos--imagen img {
         height: 300px;
         width: 300px; }
+  .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
+    height: 300px; }
   /*conocenos.html*/
   .container__intro .container__intro--texto {
     padding: 5px; }
