@@ -83,10 +83,15 @@ body {
     padding: 5px; }
 
 .container__articulo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   box-shadow: 1px 1px 5px #000;
   padding: 15px;
   margin-top: 20px; }
   .container__articulo .container__articulo__texto {
+    padding: 15px;
+    font-size: 22px;
+    align-self: center;
     text-align: center; }
     .container__articulo .container__articulo__texto #links {
       text-decoration: none;
@@ -98,8 +103,8 @@ body {
       .container__articulo .container__articulo__carousel .carousel-inner .carousel-item {
         padding: 15px; }
         .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
-          height: 500px;
-          width: 450px;
+          height: 400px;
+          width: 400px;
           border: solid 2px #000; }
 
 /*Contenido conocenos.html*/
@@ -151,17 +156,17 @@ body {
 .box__productos__fundas {
   box-shadow: 1px 1px 5px;
   padding: 15px;
-  background-color: #1f55ac; }
+  background-color: #4974bb; }
 
 .box__productos__chapas {
   box-shadow: 1px 1px 5px;
   padding: 15px;
-  background-color: #1f55ac; }
+  background-color: #4974bb; }
 
 .box__productos__popsockets {
   box-shadow: 1px 1px 5px;
   padding: 15px;
-  background-color: #1f55ac; }
+  background-color: #4974bb; }
 
 .box__productos__fundas--texto {
   align-self: center; }
@@ -310,13 +315,15 @@ body {
   /*General*/
   body {
     font-size: 24px; }
-  .titulo__principal h1 {
-    font-size: 42px; }
+  .titulo__principal {
+    margin-bottom: 0px; }
+    .titulo__principal h1 {
+      font-size: 42px; }
   .titulo__seccion h2 {
     font-size: 35px; }
   /*Index*/
   .container__row--ubicacion {
-    padding-top: 10px; }
+    padding-top: 0px; }
     .container__row--ubicacion p {
       text-align: center; }
   .container__row--imagen {
@@ -334,8 +341,13 @@ body {
       .container__productos .container__productos--box .container__productos--imagen img {
         height: 300px;
         width: 300px; }
-  .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
-    height: 300px; }
+  .container__articulo {
+    display: flex;
+    flex-direction: column; }
+    .container__articulo .container__articulo__texto {
+      padding: 0px 30px; }
+    .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
+      height: 350px; }
   /*conocenos.html*/
   .container__intro .container__intro--texto {
     padding: 5px; }
@@ -408,15 +420,23 @@ body {
           margin: 0px; } }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
+  /*header*/
   .navbar-brand-aparecer {
     display: contents; }
   .navbar-nav {
     align-items: center; }
   .titulo__principal h1 {
     font-size: 68px; }
+  /*index.html*/
   .container__row--ubicacion {
     padding-top: 0px;
     text-align: center; }
+  .container__articulo {
+    display: flex;
+    flex-direction: column; }
+    .container__articulo .container__articulo__texto {
+      padding: 0px 50px; }
+  /*productis.html*/
   .box__productos__fundas {
     display: flex;
     flex-direction: column;
@@ -453,6 +473,11 @@ body {
   .container__row--ubicacion {
     padding-top: 15px;
     text-align: left; }
+  .container__articulo {
+    display: flex;
+    flex-direction: column; }
+    .container__articulo .container__articulo__texto {
+      padding: 0px 80px; }
   .container__row--imagen img {
     height: 350px;
     width: 350px;
