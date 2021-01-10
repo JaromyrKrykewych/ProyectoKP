@@ -527,7 +527,7 @@ body {
     font-size: 20px; }
   /*General*/
   body {
-    font-size: 24px; }
+    font-size: 20px; }
   /*index.html*/
   .seccion__introduccion .titulo__principal {
     margin-bottom: 0px; }
@@ -540,46 +540,54 @@ body {
     grid-gap: 10px;
     padding: 0; }
     .seccion__introduccion .introduccion--texto {
-      padding: 20px;
-      font-size: 22px; }
+      padding: 20px; }
     .seccion__introduccion .introduccion--imagen {
       padding: 0; }
       .seccion__introduccion .introduccion--imagen img {
         height: 150px;
         width: 150px; }
-  .titulo__seccion h2 {
+  .seccion__productos .titulo__seccion h2 {
     font-size: 35px; }
-  .container__productos {
+  .seccion__productos .container__productos {
     box-shadow: none;
     padding: 0px; }
-    .container__productos .container__productos--box {
+    .seccion__productos .container__productos .container__productos--box {
       box-shadow: 1px 1px 3px;
       padding: 10px;
       margin: 5px; }
-      .container__productos .container__productos--box .container__productos--imagen img {
+      .seccion__productos .container__productos .container__productos--box .container__productos--imagen img {
         height: 300px;
         width: 300px; }
-  .container__articulo {
-    display: flex;
-    flex-direction: column; }
-    .container__articulo .container__articulo__texto {
-      padding: 0px 30px; }
-    .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
-      height: 350px; }
+  .seccion__articulo .titulo__seccion h2 {
+    font-size: 35px; }
+  .seccion__articulo .container__articulo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-gap: 10px; }
+    .seccion__articulo .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
+      height: 300px; }
   /*conocenos.html*/
-  .container__intro .container__intro--texto {
-    padding: 5px; }
-  .container__intro .container__intro--imagen img {
-    height: 300px;
-    width: 300px; }
-  .infografia {
-    display: flex;
-    flex-direction: column; }
-    .infografia h3 {
-      font-size: 30px; }
-    .infografia p, .infografia ul, .infografia li {
-      text-align: center;
-      padding: 0px; }
+  .seccion__introduccion .container__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-gap: 10px;
+    padding: 0px 20px; }
+    .seccion__introduccion .container__intro--imagen img {
+      height: 300px;
+      width: 300px; }
+  .seccion__infografia .titulo__seccion h2 {
+    font-size: 35px; }
+  .seccion__infografia .infografia {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(3, auto);
+    grid-gap: 10px;
+    padding: 0px 10px;
+    margin-top: 0px; }
+    .seccion__infografia .infografia--item {
+      padding: 10px; }
   /*productos*/
   .box__productos__fundas {
     display: flex;
@@ -618,24 +626,22 @@ body {
     padding: 0px;
     padding-top: 15px; }
   /*footer*/
-  .bloque__footer {
-    background-image: linear-gradient(to bottom, #427ddb, #000); }
-    .bloque__footer .bloque__footer--titulo h2 {
-      font-size: 40px; }
-    .bloque__footer .bloque__footer--lista li {
-      display: flex;
-      flex-direction: column; }
-    .bloque__footer .modal-header--titulo {
-      text-align: left; }
-    .bloque__footer .modal-body {
-      font-size: 13px; }
-      .bloque__footer .modal-body .card {
+  .bloque__footer .bloque__footer--titulo h2 {
+    font-size: 40px; }
+  .bloque__footer .bloque__footer--lista li {
+    display: flex;
+    flex-direction: column; }
+  .bloque__footer .modal-header--titulo {
+    text-align: left; }
+  .bloque__footer .modal-body {
+    font-size: 13px; }
+    .bloque__footer .modal-body .card {
+      padding: 0px;
+      margin: 0px; }
+      .bloque__footer .modal-body .card button {
+        font-size: 14px;
         padding: 0px;
-        margin: 0px; }
-        .bloque__footer .modal-body .card button {
-          font-size: 14px;
-          padding: 0px;
-          margin: 0px; } }
+        margin: 0px; } }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
   /*header*/

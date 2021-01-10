@@ -520,7 +520,7 @@ body{
 	}
 	/*General*/
 	body{
-		font-size: 24px;
+		font-size: 20px;
 	}
 	/*index.html*/
 	.seccion__introduccion{
@@ -538,7 +538,6 @@ body{
 			padding: 0;
 				&--texto{
 					padding: 20px;
-					font-size: 22px;
 				}
 				&--imagen{
 					padding: 0;
@@ -549,65 +548,84 @@ body{
 				}
 		}
 	}
-	
-	.titulo__seccion{
+	.seccion__productos{
+		.titulo__seccion{
 			h2{
 				font-size: 35px;
 			}
+		}
+		.container__productos{
+			box-shadow: none;
+			padding: 0px;
+				.container__productos--box{
+					box-shadow: 1px 1px 3px;
+					padding: 10px;
+					margin: 5px;
+						.container__productos--imagen{
+							img{
+								height: 300px;
+								width: 300px;
+							}
+						}
+				}	
+		}
 	}
-	.container__productos{
-		box-shadow: none;
-		padding: 0px;
-			.container__productos--box{
-				box-shadow: 1px 1px 3px;
-				padding: 10px;
-				margin: 5px;
-					.container__productos--imagen{
-						img{
-							height: 300px;
-							width: 300px;
+	.seccion__articulo{
+		.titulo__seccion{
+			h2{
+				font-size: 35px;
+			}
+		}
+		.container__articulo{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+			grid-gap: 10px;
+				.container__articulo__carousel{
+					.carousel-inner{
+						.carousel-item{
+							img{
+								height: 300px;
+							}
 						}
 					}
-			}	
-	}
-	.container__articulo{
-		display: flex;
-		flex-direction: column;
-			.container__articulo__texto{
-				padding: 0px 30px;
-			}
-			.container__articulo__carousel{
-					.carousel-inner{
-							.carousel-item{
-									img{
-										height: 350px;
-									}
-							}
-					}
-			}
-	}
-	/*conocenos.html*/
-	.container__intro{
-			.container__intro--texto{
-				padding: 5px;
-			}
-			.container__intro--imagen{
-				img{
-					height: 300px;
-					width: 300px;
 				}
-			}
+		}
 	}
-	.infografia{
-		display: flex;
-		flex-direction: column;
-			h3{
-				font-size: 30px;
+	
+	/*conocenos.html*/
+	.seccion__introduccion{
+		.container__intro{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+			grid-gap: 10px;
+			padding: 0px 20px;
+				&--imagen{
+					img{
+						height: 300px;
+						width: 300px;
+					}
+				}
+		}
+	}
+	.seccion__infografia{
+		.titulo__seccion{
+			h2{
+				font-size: 35px;
 			}
-			p, ul, li{
-				text-align: center;
-				padding: 0px;
-			}
+		}
+		.infografia{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr repeat(3, auto);
+			grid-gap: 10px;
+			padding: 0px 10px;
+			margin-top: 0px;
+				&--item{
+					padding: 10px;
+				}
+		}
 	}
 	/*productos*/
 	@each $producto in fundas, chapas, popsockets{
@@ -660,7 +678,6 @@ body{
 	}
 	/*footer*/
 	.bloque__footer{
-		background-image: linear-gradient(to bottom, #427ddb, #000);
 		.bloque__footer--titulo h2{
 			font-size: 40px;
 		}
