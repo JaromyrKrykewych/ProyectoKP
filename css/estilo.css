@@ -1,18 +1,20 @@
+* {
+  padding: 0;
+  margin: 0; }
+
 body {
-  background-color: #b3c6e6;
   font-family: 'PT Sans Narrow', sans-serif;
   line-height: 1,5;
-  font-size: 25px;
-  margin: 0;
-  padding: 0; }
+  font-size: 25px; }
 
 /*header*/
 .header__logo {
+  background-image: radial-gradient(ellipse farthest-corner at 45px 45px, #a3ce43 0%, rgba(0, 0, 255, 0) 50%, #8cb929 95%);
   padding: 40px 0px 20px 0px;
-  text-align: center;
-  background-image: radial-gradient(#dae3f2 50%, #b3c6e6); }
+  text-align: center; }
   .header__logo--sub h3 {
     font-family: "Baloo Bhaina 2", cursive;
+    color: #000;
     font-size: 27px;
     padding-top: 2px; }
 
@@ -33,13 +35,165 @@ body {
     color: #fff;
     font-size: 25px; }
     .navbar-nav li a:hover {
-      color: lightblue;
+      color: #a3ce43;
       text-decoration: underline; }
 
 /*Contenido index.html*/
+.seccion__introduccion {
+  background-color: #fff;
+  padding-bottom: 50px; }
+  .seccion__introduccion .titulo__principal {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    font-family: "Baloo Bhaina 2", cursive;
+    text-align: center; }
+    .seccion__introduccion .titulo__principal h1 {
+      font-size: 70px;
+      color: black; }
+  .seccion__introduccion .titulo__principal--animacion {
+    animation-duration: 3s;
+    animation-name: titulo; }
+
+@keyframes titulo {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: .7; }
+  100% {
+    opacity: 1; } }
+  .seccion__introduccion .introduccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 0px 40px; }
+    .seccion__introduccion .introduccion .introduccion--texto {
+      padding: 50px;
+      text-align: center;
+      align-self: center;
+      box-shadow: 2px 2px 8px;
+      background-color: #8cb929; }
+    .seccion__introduccion .introduccion .introduccion--imagen {
+      padding: 10px;
+      box-shadow: 2px 2px 8px;
+      background-color: #8cb929; }
+      .seccion__introduccion .introduccion .introduccion--imagen img {
+        height: 350px;
+        width: 350px; }
+
+.seccion__productos {
+  background-color: #a3ce43; }
+  .seccion__productos .titulo__seccion {
+    padding-top: 40px;
+    text-align: center; }
+    .seccion__productos .titulo__seccion h2 {
+      font-family: "Baloo Bhaina 2", cursive;
+      font-size: 55px; }
+  .seccion__productos .container__productos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0px; }
+    .seccion__productos .container__productos .container__productos--box {
+      background-color: #fff;
+      box-shadow: 2px 2px 8px; }
+      .seccion__productos .container__productos .container__productos--box .container__productos--texto {
+        text-align: center;
+        font-size: 30px;
+        padding-bottom: 20px; }
+      .seccion__productos .container__productos .container__productos--box .container__productos--imagen {
+        padding: 20px; }
+
+.seccion__articulo {
+  background-color: #fff;
+  padding: 50px 0px; }
+  .seccion__articulo .titulo__seccion {
+    padding-top: 20px;
+    text-align: center; }
+    .seccion__articulo .titulo__seccion h2 {
+      font-family: "Baloo Bhaina 2", cursive;
+      font-size: 55px; }
+  .seccion__articulo .container__articulo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+    margin-top: 20px; }
+    .seccion__articulo .container__articulo .container__articulo__texto {
+      padding: 15px;
+      font-size: 22px;
+      align-self: center;
+      text-align: center;
+      box-shadow: 2px 2px 8px;
+      background-color: #8cb929; }
+      .seccion__articulo .container__articulo .container__articulo__texto #links {
+        text-decoration: none;
+        color: black; }
+    .seccion__articulo .container__articulo .container__articulo__carousel {
+      margin-bottom: 30px;
+      box-shadow: 2px 2px 8px;
+      background-color: #8cb929;
+      padding: 20px 10px; }
+      .seccion__articulo .container__articulo .container__articulo__carousel .carousel-inner {
+        box-shadow: 1px 1px 3px;
+        background-color: #fff; }
+        .seccion__articulo .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
+          height: 400px;
+          width: 400px;
+          border: solid 1px #000; }
+
+/*Contenido conocenos.html*/
+.seccion__introduccion .container__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  padding: 0px 40px; }
+  .seccion__introduccion .container__intro--texto {
+    text-align: center;
+    align-self: center;
+    box-shadow: 2px 2px 8px;
+    background-color: #8cb929; }
+  .seccion__introduccion .container__intro--imagen {
+    padding: 10px;
+    box-shadow: 2px 2px 8px;
+    background-color: #8cb929; }
+    .seccion__introduccion .container__intro--imagen img {
+      height: 350px;
+      width: 350px; }
+
+.seccion__infografia {
+  background-color: #a3ce43; }
+  .seccion__infografia .titulo__seccion {
+    padding-top: 30px;
+    text-align: center; }
+    .seccion__infografia .titulo__seccion h2 {
+      font-family: "Baloo Bhaina 2", cursive;
+      font-size: 55px; }
+  .seccion__infografia .infografia {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center; }
+    .seccion__infografia .infografia__item {
+      background-color: #fff;
+      box-shadow: 2px 2px 8px;
+      padding: 20px; }
+      .seccion__infografia .infografia__item h3 {
+        font-family: "Baloo Bhaina 2", cursive;
+        font-size: 40px; }
+      .seccion__infografia .infografia__item--listas {
+        list-style-type: none; }
+
+/*Contenido productos.html*/
 .titulo__principal {
+  padding-top: 50px;
+  padding-bottom: 30px;
   font-family: "Baloo Bhaina 2", cursive;
-  margin: 50px 0px 40px 0px;
   text-align: center; }
   .titulo__principal h1 {
     font-size: 70px;
@@ -57,92 +211,17 @@ body {
   100% {
     opacity: 1; } }
 
-.container .container__row--ubicacion {
-  padding-top: 80px; }
-
-.titulo__seccion {
-  margin: 50px 0px 50px 0px;
-  text-align: center; }
-  .titulo__seccion h2 {
-    font-family: "Baloo Bhaina 2", cursive;
-    font-size: 55px; }
-
-.container__productos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  box-shadow: 1px 1px 5px;
-  padding: 50px 0px; }
-  .container__productos .container__productos--texto {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 30px; }
-  .container__productos .container__productos--imagen {
-    border-style: double;
-    padding: 5px; }
-
-.container__articulo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 1px 1px 5px #000;
-  padding: 15px;
-  margin-top: 20px; }
-  .container__articulo .container__articulo__texto {
-    padding: 15px;
-    font-size: 22px;
-    align-self: center;
-    text-align: center; }
-    .container__articulo .container__articulo__texto #links {
-      text-decoration: none;
-      color: black; }
-  .container__articulo .container__articulo__carousel {
-    margin-bottom: 30px; }
-    .container__articulo .container__articulo__carousel .carousel-inner {
-      box-shadow: 1px 1px 3px; }
-      .container__articulo .container__articulo__carousel .carousel-inner .carousel-item {
-        padding: 15px; }
-        .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
-          height: 400px;
-          width: 400px;
-          border: solid 2px #000; }
-
-/*Contenido conocenos.html*/
-.container__intro {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  box-shadow: 1px 1px 5px; }
-  .container__intro--texto {
-    margin: 15px auto; }
-  .container__intro--imagen {
-    margin: 15px auto; }
-    .container__intro--imagen img {
-      border: double 1px #000;
-      padding: 5px; }
-
-.infografia {
-  display: grid;
-  grid-template-rows: 50% 50%;
-  grid-template-columns: 50% 50%;
-  grid-column-gap: 30px;
-  grid-row-gap: 50px;
-  padding: 20px;
-  margin-top: 40px;
-  box-shadow: 1px 1px 5px;
-  text-align: center;
-  align-items: center;
-  justify-content: center; }
-  .infografia h3 {
-    font-family: "Baloo Bhaina 2", cursive;
-    font-size: 40px; }
-  .infografia--listas {
-    list-style-type: none; }
-
-/*Contenido productos.html*/
 .box__productos {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #fff; }
+  .box__productos .titulo__seccion {
+    margin: 30px 0px;
+    padding-top: 10px;
+    text-align: center; }
+    .box__productos .titulo__seccion h2 {
+      font-family: "Baloo Bhaina 2", cursive;
+      font-size: 55px; }
   .box__productos__fundas {
     display: grid;
     grid-template-columns: 60% 40%; }
@@ -154,19 +233,22 @@ body {
     grid-template-columns: 60% 40%; }
 
 .box__productos__fundas {
-  box-shadow: 1px 1px 5px;
+  background-color: #a3ce43;
+  box-shadow: 2px 2px 8px;
   padding: 15px;
-  background-color: #4974bb; }
+  justify-items: center; }
 
 .box__productos__chapas {
-  box-shadow: 1px 1px 5px;
+  background-color: #a3ce43;
+  box-shadow: 2px 2px 8px;
   padding: 15px;
-  background-color: #4974bb; }
+  justify-items: center; }
 
 .box__productos__popsockets {
-  box-shadow: 1px 1px 5px;
+  background-color: #a3ce43;
+  box-shadow: 2px 2px 8px;
   padding: 15px;
-  background-color: #4974bb; }
+  justify-items: center; }
 
 .box__productos__fundas--texto {
   align-self: center; }
@@ -190,74 +272,205 @@ body {
   padding: 4px; }
 
 /*galeria.html*/
-.contenedor h3 {
-  margin: 30px 0px 30px 0px;
-  padding: 8px;
-  text-align: center;
-  background: rgba(56, 102, 181, 0.5); }
-
-.contenedor__set--imagen, .contenedor__dobleset--imagen {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-  .contenedor__set--imagen img, .contenedor__dobleset--imagen img {
-    height: 250px;
-    width: 250px;
-    padding: 10px;
-    border-style: double;
-    transition: 2s; }
-    .contenedor__set--imagen img:hover, .contenedor__dobleset--imagen img:hover {
-      height: 320px;
-      width: 320px; }
-
-.contenedor__dobleset {
+.contenedor__fundas {
   display: grid;
-  grid-template-rows: 50% 50%;
-  grid-row-gap: 50px;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px repeat(3, 1fr);
+  padding: 0px 40px;
   margin-bottom: 30px; }
+  .contenedor__fundas .titulo__seccion {
+    padding-top: 30px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3; }
+    .contenedor__fundas .titulo__seccion h2 {
+      font-family: "Baloo Bhaina 2", cursive;
+      font-size: 55px; }
+  .contenedor__fundas .cactus {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    justify-items: center;
+    box-shadow: 2px 2px 8px;
+    padding: 20px;
+    background-color: #a3ce43; }
+    .contenedor__fundas .cactus h3 {
+      margin: 10px 0px 30px 0px;
+      padding: 8px;
+      text-align: center;
+      font-size: 35px;
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .contenedor__fundas .cactus img {
+      height: 250px;
+      width: 250px;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 1px 1px 4px; }
+  .contenedor__fundas .flores {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    justify-items: center;
+    box-shadow: 2px 2px 8px;
+    padding: 20px;
+    background-color: #a3ce43; }
+    .contenedor__fundas .flores h3 {
+      margin: 10px 0px 30px 0px;
+      padding: 8px;
+      text-align: center;
+      font-size: 35px;
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .contenedor__fundas .flores img {
+      height: 250px;
+      width: 250px;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 1px 1px 4px; }
+  .contenedor__fundas .rock {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    justify-items: center;
+    box-shadow: 2px 2px 8px;
+    padding: 20px;
+    background-color: #a3ce43; }
+    .contenedor__fundas .rock h3 {
+      margin: 10px 0px 30px 0px;
+      padding: 8px;
+      text-align: center;
+      font-size: 35px;
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .contenedor__fundas .rock img {
+      height: 250px;
+      width: 250px;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 1px 1px 4px; }
+  .contenedor__fundas .marmol {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    justify-items: center;
+    box-shadow: 2px 2px 8px;
+    padding: 20px;
+    background-color: #a3ce43; }
+    .contenedor__fundas .marmol h3 {
+      margin: 10px 0px 30px 0px;
+      padding: 8px;
+      text-align: center;
+      font-size: 35px;
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .contenedor__fundas .marmol img {
+      height: 250px;
+      width: 250px;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 1px 1px 4px; }
+  .contenedor__fundas .variado {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    justify-items: center;
+    box-shadow: 2px 2px 8px;
+    padding: 20px;
+    background-color: #a3ce43; }
+    .contenedor__fundas .variado h3 {
+      margin: 10px 0px 30px 0px;
+      padding: 8px;
+      text-align: center;
+      font-size: 35px;
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .contenedor__fundas .variado img {
+      height: 250px;
+      width: 250px;
+      padding: 5px;
+      background-color: #fff;
+      box-shadow: 1px 1px 4px; }
 
-.contenedor__tipografia {
-  text-align: center;
-  margin-bottom: 40px; }
-  .contenedor__tipografia img {
-    height: 350px;
-    width: 250px;
-    transition: 2s; }
-    .contenedor__tipografia img:hover {
-      height: 420px;
-      width: 320px; }
+.contenedor__chapas {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr;
+  padding: 0px 30px;
+  margin-bottom: 30px; }
+  .contenedor__chapas .titulo__seccion {
+    padding-top: 30px;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3; }
+    .contenedor__chapas .titulo__seccion h2 {
+      font-family: "Baloo Bhaina 2", cursive;
+      font-size: 55px; }
+  .contenedor__chapas .plantillas {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr;
+    justify-items: center;
+    box-shadow: 2px 2px 8px;
+    padding: 20px;
+    background-color: #a3ce43; }
+    .contenedor__chapas .plantillas h3 {
+      margin: 10px 0px 30px 0px;
+      padding: 8px;
+      text-align: center;
+      font-size: 35px;
+      grid-column-start: 1;
+      grid-column-end: 3; }
+    .contenedor__chapas .plantillas img {
+      height: 250px;
+      width: 250px;
+      padding: 5px;
+      box-sizing: 1px 1px 4px; }
 
 /*contacto.html*/
-.box__contacto {
-  display: grid; }
-  .box__contacto__redes {
-    text-align: center; }
-    .box__contacto__redes--iconos {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 40px 100px; }
-      .box__contacto__redes--iconos li {
-        list-style: none; }
-        .box__contacto__redes--iconos li a {
-          color: black;
-          text-decoration: none; }
+.seccion__contacto {
+  background-color: #fff; }
+  .seccion__contacto .box__contacto {
+    display: grid; }
+    .seccion__contacto .box__contacto__redes {
+      text-align: center; }
+      .seccion__contacto .box__contacto__redes--iconos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 40px 100px; }
+        .seccion__contacto .box__contacto__redes--iconos li {
+          list-style: none; }
+          .seccion__contacto .box__contacto__redes--iconos li a {
+            color: black;
+            text-decoration: none; }
 
-.box__formulario {
-  margin: 30px auto;
-  box-shadow: 1px 1px 7px #000; }
-  .box__formulario .input-group--texto {
-    font-size: 20px;
-    padding: 5px;
-    border: 1px inset #000;
-    /*background: rgb(184, 179, 179);*/
-    background: #dae3f2; }
-  .box__formulario .form-select {
-    transform: scale(1, 0.8);
-    background: #dae3f2; }
-  .box__formulario .form-control {
-    border: 2px outset #2525b4;
-    background-color: #dae3f2; }
+.formulario__801 {
+  background-color: #fff;
+  padding: 30px 0px; }
+  .formulario__801 .box__formulario {
+    margin: 0px auto;
+    box-shadow: 1px 1px 7px #000;
+    background-color: #a3ce43; }
+    .formulario__801 .box__formulario .input-group--texto {
+      font-size: 20px;
+      padding: 5px;
+      border: 1px inset #8cb929;
+      background: #fff; }
+    .formulario__801 .box__formulario .form-select {
+      transform: scale(1, 0.8);
+      background: #fff; }
+    .formulario__801 .box__formulario .form-control {
+      border: 2px outset #a3ce43;
+      background-color: #fff; }
 
 .formulario__chico {
   margin: 20px auto;
@@ -271,7 +484,6 @@ body {
 
 /*Footer*/
 .bloque__footer {
-  background-image: linear-gradient(to right, #4974bb, #0b0ba0);
   color: white; }
   .bloque__footer .bloque__footer--titulo h2 {
     font-size: 45px; }
@@ -284,21 +496,22 @@ body {
   .bloque__footer .bloque__footer--lista ul li button:hover {
     text-decoration: none; }
   .bloque__footer .modal-header {
-    background-image: linear-gradient(to right, #427ddb, #000); }
+    background-color: #000; }
     .bloque__footer .modal-header .modal-header--titulo {
       color: #fff;
       font-size: 40px; }
   .bloque__footer .modal-body {
-    background-image: radial-gradient(#dae3f2, #b3c6e6);
+    background-color: #fff;
     color: #000;
     font-size: 18px; }
     .bloque__footer .modal-body .card {
-      background-image: radial-gradient(#dae3f2, #b3c6e6); }
+      background-color: #a3ce43; }
       .bloque__footer .modal-body .card button {
+        background-color: #8cb929;
         color: #000;
         font-size: 20px; }
   .bloque__footer .modal-footer {
-    background-image: linear-gradient(to right, #427ddb, #000); }
+    background-color: #000; }
     .bloque__footer .modal-footer button {
       font-size: 20px; }
 
@@ -315,22 +528,27 @@ body {
   /*General*/
   body {
     font-size: 24px; }
-  .titulo__principal {
+  /*index.html*/
+  .seccion__introduccion .titulo__principal {
     margin-bottom: 0px; }
-    .titulo__principal h1 {
+    .seccion__introduccion .titulo__principal h1 {
       font-size: 42px; }
+  .seccion__introduccion .introduccion {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 0; }
+    .seccion__introduccion .introduccion--texto {
+      padding: 20px;
+      font-size: 22px; }
+    .seccion__introduccion .introduccion--imagen {
+      padding: 0; }
+      .seccion__introduccion .introduccion--imagen img {
+        height: 150px;
+        width: 150px; }
   .titulo__seccion h2 {
     font-size: 35px; }
-  /*Index*/
-  .container__row--ubicacion {
-    padding-top: 0px; }
-    .container__row--ubicacion p {
-      text-align: center; }
-  .container__row--imagen {
-    padding-top: 10px; }
-    .container__row--imagen img {
-      height: 330px;
-      width: 300px; }
   .container__productos {
     box-shadow: none;
     padding: 0px; }
@@ -378,12 +596,12 @@ body {
       width: 320px;
       height: 300px; }
   /*galeria*/
-  .contenedor__set--imagen, .contenedor__dobleset--imagen {
+  .contenedor__set--imagen {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     row-gap: 15px;
     justify-content: center; }
-    .contenedor__set--imagen img:hover, .contenedor__dobleset--imagen img:hover {
+    .contenedor__set--imagen img:hover {
       height: 278px;
       width: 278px; }
   .contenedor__tipografia img:hover {
@@ -452,7 +670,7 @@ body {
   .box__productos__chapas {
     display: flex;
     flex-direction: column-reverse; }
-  .contenedor__set--imagen, .contenedor__dobleset--imagen {
+  .contenedor__set--imagen {
     margin-right: 20px;
     display: grid;
     grid-template-rows: 50% 50%;
@@ -461,7 +679,7 @@ body {
     grid-column-gap: 20px;
     justify-items: center;
     align-items: center; }
-    .contenedor__set--imagen img:hover, .contenedor__dobleset--imagen img:hover {
+    .contenedor__set--imagen img:hover {
       height: 278px;
       width: 278px; }
   .bloque__footer .modal-body {
@@ -482,7 +700,7 @@ body {
     height: 350px;
     width: 350px;
     padding-top: 15px; }
-  .contenedor__set--imagen, .contenedor__dobleset--imagen {
+  .contenedor__set--imagen {
     display: grid;
     grid-template-rows: 50% 50%;
     grid-template-columns: 50% 50%;
