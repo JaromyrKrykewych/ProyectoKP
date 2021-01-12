@@ -532,42 +532,44 @@ body{
 			grid-template-rows: 1fr 1fr;
 			grid-gap: 10px;
 			padding: 0;
-				&--texto{
+				.introduccion--texto{
 					padding: 20px;
 				}
-				&--imagen{
-					padding: 0;
+				.introduccion--imagen{
 						img{
-							height: 150px;
-							width: 150px;
+							height: 300px;
+							width: 300px;
 						}
-				}
+				}		
 		}
 	}
 	.seccion__productos{
-		.titulo__seccion{
-			h2{
-				font-size: 35px;
+		padding-bottom: 20px;
+			.titulo__seccion{
+				margin-bottom: 40px;
+				h2{
+					font-size: 35px;
+				}
 			}
-		}
-		.container__productos{
-			box-shadow: none;
-			padding: 0px;
-				.container__productos--box{
-					box-shadow: 1px 1px 3px;
-					padding: 10px;
-					margin: 5px;
-						.container__productos--imagen{
-							img{
-								height: 300px;
-								width: 300px;
+			.container__productos{
+				box-shadow: none;
+				padding: 0px;
+					.container__productos--box{
+						box-shadow: 1px 1px 3px;
+						padding: 10px;
+						margin: 5px;
+							.container__productos--imagen{
+								img{
+									height: 300px;
+									width: 300px;
+								}
 							}
-						}
-				}	
-		}
+					}	
+			}
 	}
 	.seccion__articulo{
 		.titulo__seccion{
+			margin-bottom: 50px;
 			h2{
 				font-size: 35px;
 			}
@@ -577,6 +579,11 @@ body{
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr auto;
 			grid-gap: 10px;
+			background-color: $color2;
+			margin: 10px 10px;
+				.container__articulo__texto{
+					box-shadow: none;
+				}
 				.container__articulo__carousel{
 					.carousel-inner{
 						.carousel-item{
@@ -606,6 +613,7 @@ body{
 		}
 	}
 	.seccion__infografia{
+		padding-bottom: 20px;
 		.titulo__seccion{
 			h2{
 				font-size: 35px;
@@ -618,8 +626,14 @@ body{
 			grid-gap: 10px;
 			padding: 0px 10px;
 			margin-top: 0px;
-				&--item{
-					padding: 10px;
+				.infografia--item{
+					padding: 20px 10px;
+					h3{
+						font-size: 28px;
+					}
+					p{
+						font-size: 22px;
+					}
 				}
 		}
 	}
@@ -668,7 +682,7 @@ body{
 		grid-template-columns: 1fr;
 		grid-template-rows: auto repeat(6, 1fr);
 		grid-gap: 10px;
-		padding: 0px 10px;
+		padding: 0px 20px;
 			.titulo__seccion{
 				padding-top: 10px;
 				grid-column-start: 1;
@@ -693,8 +707,8 @@ body{
 							font-size: 28px;
 						}
 						img{
-							height: 200px;
-							width: 200px;
+							height: 250px;
+							width: 250px;
 							padding: 3px;
 						}
 				}
@@ -705,7 +719,7 @@ body{
 		grid-template-columns: 1fr;
 		grid-template-rows: auto repeat(2, 1fr);
 		grid-gap: 10px;
-		padding: 0px 10px;
+		padding: 0px 20px;
 			.titulo__seccion{
 				padding-top: 10px;
 				grid-column-start: 1;
@@ -729,8 +743,8 @@ body{
 							font-size: 28px;
 						}
 						img{
-							height: 200px;
-							width: 200px;
+							height: 250px;
+							width: 250px;
 							padding: 3px;
 						}
 			}

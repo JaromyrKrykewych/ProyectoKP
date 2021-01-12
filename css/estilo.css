@@ -534,32 +534,40 @@ body {
     grid-template-rows: 1fr 1fr;
     grid-gap: 10px;
     padding: 0; }
-    .seccion__introduccion .introduccion--texto {
+    .seccion__introduccion .introduccion .introduccion--texto {
       padding: 20px; }
-    .seccion__introduccion .introduccion--imagen {
-      padding: 0; }
-      .seccion__introduccion .introduccion--imagen img {
-        height: 150px;
-        width: 150px; }
-  .seccion__productos .titulo__seccion h2 {
-    font-size: 35px; }
-  .seccion__productos .container__productos {
-    box-shadow: none;
-    padding: 0px; }
-    .seccion__productos .container__productos .container__productos--box {
-      box-shadow: 1px 1px 3px;
-      padding: 10px;
-      margin: 5px; }
-      .seccion__productos .container__productos .container__productos--box .container__productos--imagen img {
-        height: 300px;
-        width: 300px; }
-  .seccion__articulo .titulo__seccion h2 {
-    font-size: 35px; }
+    .seccion__introduccion .introduccion .introduccion--imagen img {
+      height: 300px;
+      width: 300px; }
+  .seccion__productos {
+    padding-bottom: 20px; }
+    .seccion__productos .titulo__seccion {
+      margin-bottom: 40px; }
+      .seccion__productos .titulo__seccion h2 {
+        font-size: 35px; }
+    .seccion__productos .container__productos {
+      box-shadow: none;
+      padding: 0px; }
+      .seccion__productos .container__productos .container__productos--box {
+        box-shadow: 1px 1px 3px;
+        padding: 10px;
+        margin: 5px; }
+        .seccion__productos .container__productos .container__productos--box .container__productos--imagen img {
+          height: 300px;
+          width: 300px; }
+  .seccion__articulo .titulo__seccion {
+    margin-bottom: 50px; }
+    .seccion__articulo .titulo__seccion h2 {
+      font-size: 35px; }
   .seccion__articulo .container__articulo {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
-    grid-gap: 10px; }
+    grid-gap: 10px;
+    background-color: #8cb929;
+    margin: 10px 10px; }
+    .seccion__articulo .container__articulo .container__articulo__texto {
+      box-shadow: none; }
     .seccion__articulo .container__articulo .container__articulo__carousel .carousel-inner .carousel-item img {
       height: 300px; }
   /*conocenos.html*/
@@ -572,17 +580,23 @@ body {
     .seccion__introduccion .container__intro--imagen img {
       height: 300px;
       width: 300px; }
-  .seccion__infografia .titulo__seccion h2 {
-    font-size: 35px; }
-  .seccion__infografia .infografia {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr repeat(3, auto);
-    grid-gap: 10px;
-    padding: 0px 10px;
-    margin-top: 0px; }
-    .seccion__infografia .infografia--item {
-      padding: 10px; }
+  .seccion__infografia {
+    padding-bottom: 20px; }
+    .seccion__infografia .titulo__seccion h2 {
+      font-size: 35px; }
+    .seccion__infografia .infografia {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr repeat(3, auto);
+      grid-gap: 10px;
+      padding: 0px 10px;
+      margin-top: 0px; }
+      .seccion__infografia .infografia .infografia--item {
+        padding: 20px 10px; }
+        .seccion__infografia .infografia .infografia--item h3 {
+          font-size: 28px; }
+        .seccion__infografia .infografia .infografia--item p {
+          font-size: 22px; }
   /*productos*/
   .titulo__principal {
     margin-bottom: 0px; }
@@ -647,7 +661,7 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto repeat(6, 1fr);
     grid-gap: 10px;
-    padding: 0px 10px; }
+    padding: 0px 20px; }
     .contenedor__fundas .titulo__seccion {
       padding-top: 10px;
       grid-column-start: 1;
@@ -671,8 +685,8 @@ body {
         grid-column-end: 2;
         font-size: 28px; }
       .contenedor__fundas .cactus img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         padding: 3px; }
     .contenedor__fundas .flores {
       display: grid;
@@ -691,8 +705,8 @@ body {
         grid-column-end: 2;
         font-size: 28px; }
       .contenedor__fundas .flores img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         padding: 3px; }
     .contenedor__fundas .rock {
       display: grid;
@@ -711,8 +725,8 @@ body {
         grid-column-end: 2;
         font-size: 28px; }
       .contenedor__fundas .rock img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         padding: 3px; }
     .contenedor__fundas .marmol {
       display: grid;
@@ -731,8 +745,8 @@ body {
         grid-column-end: 2;
         font-size: 28px; }
       .contenedor__fundas .marmol img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         padding: 3px; }
     .contenedor__fundas .variado {
       display: grid;
@@ -751,15 +765,15 @@ body {
         grid-column-end: 2;
         font-size: 28px; }
       .contenedor__fundas .variado img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         padding: 3px; }
   .contenedor__chapas {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto repeat(2, 1fr);
     grid-gap: 10px;
-    padding: 0px 10px; }
+    padding: 0px 20px; }
     .contenedor__chapas .titulo__seccion {
       padding-top: 10px;
       grid-column-start: 1;
@@ -783,8 +797,8 @@ body {
         grid-column-end: 2;
         font-size: 28px; }
       .contenedor__chapas .plantillas img {
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         padding: 3px; }
   /*contacto*/
   .box__contacto__redes h3 {
