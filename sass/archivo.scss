@@ -13,8 +13,8 @@ body{
 }
 /*header*/
 .header__logo{
-	background-image: radial-gradient(ellipse farthest-corner at 45px 45px , $color1 0%, rgba(0, 0, 255, 0) 50%, $color2 95%);
-    padding: 40px 0px 20px 0px; 
+	background-image: radial-gradient(circle at 45px 45px, $color1 0%, rgba(0, 0, 255, 0) 50%, $color2 95%);
+	padding: 40px 0px 20px 0px; 
 	text-align: center;
 		&--sub h3{
 			font-family: $fonttitle;
@@ -296,6 +296,9 @@ body{
 		@each $producto in fundas, chapas, popsockets{
 				.box__productos__#{$producto}--texto{
 					align-self: center;
+						.viñetas{
+							text-align: left;
+						}
 				}
 		}	
 		@each $producto in fundas, chapas, popsockets{
@@ -580,11 +583,11 @@ body{
 			grid-template-rows: 1fr auto;
 			grid-gap: 10px;
 			background-color: $color2;
-			margin: 10px 10px;
 				.container__articulo__texto{
 					box-shadow: none;
 				}
 				.container__articulo__carousel{
+					width: 300px;
 					.carousel-inner{
 						.carousel-item{
 							img{
@@ -615,6 +618,7 @@ body{
 	.seccion__infografia{
 		padding-bottom: 20px;
 		.titulo__seccion{
+			padding-bottom: 20px;
 			h2{
 				font-size: 35px;
 			}
@@ -626,7 +630,7 @@ body{
 			grid-gap: 10px;
 			padding: 0px 10px;
 			margin-top: 0px;
-				.infografia--item{
+				.infografia__item{
 					padding: 20px 10px;
 					h3{
 						font-size: 28px;
@@ -800,81 +804,479 @@ body{
 	.navbar-nav{
 		align-items: center;
 	}
-	.titulo__principal{
-			h1{
-				font-size: 68px;
-			}
+	/*General*/
+	body{
+		font-size: 20px;
 	}
 	/*index.html*/
-	.container__row--ubicacion{
-		padding-top: 0px;
-		text-align: center;
-	}
-	.container__articulo{
-		display: flex;
-		flex-direction: column;
-			.container__articulo__texto{
-				padding: 0px 50px;
-			}
-	}
-	/*productis.html*/
-	@each $producto in fundas, chapas, popsockets{
-		.box__productos__#{$producto}{
-			display: flex;
-			flex-direction: column;
-			align-content: space-around;
+	.seccion__introduccion{
+		.titulo__principal {
+			margin-bottom: 0px;
+				h1{
+					font-size: 55px;
+				}
+		}
+		.introduccion{
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			padding: 10px;
+				.introduccion--texto{
+					padding: 20px;
+				}
+				.introduccion--imagen{
+						img{
+							height: 300px;
+							width: 300px;
+						}
+				}		
 		}
 	}
-	.box__productos__chapas{
-		display: flex;
-		flex-direction: column-reverse;
-	}
-	.contenedor__set--imagen{
-		margin-right: 20px;
-		display: grid;
-		grid-template-rows: 50% 50%;
-		grid-template-columns: 50% 50%;
-		grid-row-gap: 20px;
-		grid-column-gap: 20px;
-		justify-items: center;
-		align-items: center;
-			img:hover{
-				height: 278px;
-				width: 278px;
+	.seccion__productos{
+		padding-bottom: 20px;
+			.titulo__seccion{
+				margin-bottom: 40px;
+				h2{
+					font-size: 45px;
+				}
+			}
+			.container__productos{
+				box-shadow: none;
+				padding: 0px;
+					.container__productos--box{
+						box-shadow: 1px 1px 3px;
+						padding: 10px;
+						margin: 5px;
+							.container__productos--imagen{
+								img{
+									height: 300px;
+									width: 300px;
+								}
+							}
+					}	
 			}
 	}
-	.bloque__footer .modal-body{
-		font-size: 15px;
-			.card button{
-				font-size: 18px;
+	.seccion__articulo{
+		.titulo__seccion{
+			margin-bottom: 50px;
+			h2{
+				font-size: 45px;
+			}
+		}
+		.container__articulo{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+			grid-gap: 10px;
+			background-color: $color2;
+				.container__articulo__texto{
+					box-shadow: none;
+				}
+				.container__articulo__carousel{
+					width: 300px;
+					.carousel-inner{
+						.carousel-item{
+							img{
+								height: 300px;
+							}
+						}
+					}
+				}
+		}
+	}
+	
+	/*conocenos.html*/
+	.seccion__introduccion{
+		.container__intro{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+			grid-gap: 10px;
+			padding: 0px 20px;
+				&--imagen{
+					img{
+						height: 300px;
+						width: 300px;
+					}
+				}
+		}
+	}
+	.seccion__infografia{
+		padding-bottom: 20px;
+		.titulo__seccion{
+			padding-bottom: 20px;
+			h2{
+				font-size: 45px;
+			}
+		}
+		.infografia{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr repeat(3, auto);
+			grid-gap: 10px;
+			padding: 0px 10px;
+			margin-top: 0px;
+				.infografia__item{
+					padding: 20px 10px;
+					h3{
+						font-size: 32px;
+					}
+					p{
+						font-size: 25px;
+					}
+				}
+		}
+	}
+	/*productos*/
+	.titulo__principal {
+		margin-bottom: 0px;
+			h1{
+				font-size: 55px;
+			}
+	}
+	.box__productos{
+		.titulo__seccion{
+			margin: 10px 0px;
+			padding-top: 0;
+			h2{
+				font-size: 45px;
+			}
+		}
+	}
+	@each $producto in fundas, chapas, popsockets{
+		.box__productos__#{$producto}{
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-template-rows: 1fr;
+			justify-content: center;
+			margin-bottom: 20px;
+			.box__productos__#{$producto}--texto{
+				text-align: center;
+			}
+			.box__productos__#{$producto}--imagen{
+				justify-content: center;
+					img{
+						height: 250px;
+						width: 250px;
+					}
+			}
+			.box__productos__chapas--texto{
+				grid-row-start: 1;
+				grid-row-end: 2;
+			}
+		}
+	}
+	/*galeria*/
+	.contenedor__fundas{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto repeat(6, 1fr);
+		grid-gap: 20px;
+		padding: 0px 40px;
+			.titulo__seccion{
+				padding-top: 10px;
+				grid-column-start: 1;
+				grid-column-end: 2;
+					h2{
+						font-size: 45px;
+					}
+			}
+			@each $coleccion in cactus, flores, rock, marmol, variado{
+				.#{$coleccion}{
+						h3{
+							@include subtitulos;
+							font-size: 32px;
+						}
+						img{
+							height: 250px;
+							width: 250px;
+							padding: 3px;
+						}
+				}
+			}
+	}
+	.contenedor__chapas{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto repeat(2, 1fr);
+		grid-gap: 20px;
+		padding: 0px 40px;
+			.titulo__seccion{
+				padding-top: 10px;
+				grid-column-start: 1;
+				grid-column-end: 2;
+					h2{
+						font-size: 45px;
+					}
+			}
+			.plantillas{
+				h3{
+					@include subtitulos;
+					font-size: 32px;
+				}
+				img{
+					height: 250px;
+					width: 250px;
+					padding: 3px;
+				}
 			}
 	}
 }
-@media screen and (min-width: 768px) and (max-width: 1199px){
-	.container__row--ubicacion{
-		padding-top: 15px;
-		text-align: left;
-	}
-	.container__articulo{
-		display: flex;
-		flex-direction: column;
-			.container__articulo__texto{
-				padding: 0px 80px;
+	/*contacto*/
+	.box__contacto{
+			&__redes{
+				h3{
+					font-size: 22px;	
+				}
+					&--iconos{
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						padding: 10px;
+					}
 			}
 	}
-	.container__row--imagen img{
-		height: 350px;
-		width: 350px;
-		padding-top: 15px;
+	/*footer*/
+	.bloque__footer{
+		.bloque__footer--titulo h2{
+			font-size: 40px;
+		}
+		.bloque__footer--lista{
+			li{
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		.modal-header--titulo{
+			text-align: left;
+		}
+		.modal-body{
+			font-size: 15px;
+				.card{
+					padding: 0px;
+					margin: 0px;
+						button{
+							font-size: 18px;
+							padding: 0px;
+							margin: 0px;
+						}	
+				} 
+		}
 	}
-	.contenedor__set--imagen{
-		display: grid;
-		grid-template-rows: 50% 50%;
-		grid-template-columns: 50% 50%;
-		grid-row-gap: 20px;
-		grid-column-gap: 20px;
-		justify-items: center;
-		align-items: center; 
+@media screen and (min-width: 768px) and (max-width: 1199px){
+	/*index.html*/
+	.seccion__introduccion{
+		.titulo__principal {
+			margin-bottom: 0px;
+				h1{
+					font-size: 60px;
+				}
+		}
+		.introduccion{
+			display: grid;
+			grid-template-columns: auto 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 10px;
+			padding: 0px 15px;
+				.introduccion--texto{
+					padding: 20px;
+				}
+				.introduccion--imagen{
+						img{
+							height: 300px;
+							width: 300px;
+						}
+				}		
+		}
+	}
+	.seccion__productos{
+		padding-bottom: 20px;
+			.titulo__seccion{
+				margin-bottom: 40px;
+				h2{
+					font-size: 35px;
+				}
+			}
+			.container__productos{
+				box-shadow: none;
+				padding: 0px;
+					.container__productos--box{
+						box-shadow: 1px 1px 3px;
+						padding: 10px;
+						margin: 5px;
+							.container__productos--imagen{
+								img{
+									height: 300px;
+									width: 300px;
+								}
+							}
+					}	
+			}
+	}
+	.seccion__articulo{
+		.titulo__seccion{
+			margin-bottom: 50px;
+			h2{
+				font-size: 45px;
+			}
+		}
+		.container__articulo{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+			grid-gap: 10px;
+			background-color: $color2;
+				.container__articulo__texto{
+					box-shadow: none;
+				}
+				.container__articulo__carousel{
+					width: 350px;
+					.carousel-inner{
+						.carousel-item{
+							img{
+								height: 350px;
+							}
+						}
+					}
+				}
+		}
+	}
+	/*conocenos.html*/
+	.seccion__introduccion{
+		.container__intro{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+			grid-gap: 20px;
+			padding: 0px 80px;
+				&--imagen{
+					img{
+						height: 300px;
+						width: 300px;
+					}
+				}
+		}
+	}
+	.seccion__infografia{
+		padding-bottom: 20px;
+		.titulo__seccion{
+			padding-bottom: 20px;
+			h2{
+				font-size: 45px;
+			}
+		}
+		.infografia{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr auto;
+			grid-gap: 10px;
+			padding: 0px 10px;
+			margin-top: 0px;
+				.infografia__item{
+					padding: 20px 10px;
+					h3{
+						font-size: 35px;
+					}
+					p{
+						font-size: 25px;
+					}
+				}
+		}
+	}
+	/*productos*/
+	.titulo__principal {
+		margin-bottom: 0px;
+			h1{
+				font-size: 60px;
+			}
+	}
+	.box__productos{
+		.titulo__seccion{
+			margin: 10px 0px;
+			padding-top: 0;
+			h2{
+				font-size: 45px;
+			}
+		}
+	}
+	@each $producto in fundas, chapas, popsockets{
+		.box__productos__#{$producto}{
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-template-rows: 1fr;
+			justify-content: center;
+			margin-bottom: 20px;
+			.box__productos__#{$producto}--texto{
+				text-align: center;
+			}
+			.box__productos__#{$producto}--imagen{
+				justify-content: center;
+					img{
+						height: 300px;
+						width: 300px;
+					}
+			}
+			.box__productos__chapas--texto{
+				grid-row-start: 1;
+				grid-row-end: 2;
+			}
+		}
+		/*galeria*/
+		.contenedor__fundas{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto repeat(6, 1fr);
+			grid-gap: 20px;
+			padding: 0px 40px;
+				.titulo__seccion{
+					padding-top: 10px;
+					grid-column-start: 1;
+					grid-column-end: 2;
+						h2{
+							font-size: 45px;
+						}
+				}
+				@each $coleccion in cactus, flores, rock, marmol, variado{
+					.#{$coleccion}{
+							h3{
+								@include subtitulos;
+								font-size: 32px;
+							}
+							img{
+								height: 250px;
+								width: 250px;
+								padding: 3px;
+							}
+					}
+				}
+		}
+		.contenedor__chapas{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto repeat(2, 1fr);
+			grid-gap: 20px;
+			padding: 0px 40px;
+				.titulo__seccion{
+					padding-top: 10px;
+					grid-column-start: 1;
+					grid-column-end: 2;
+						h2{
+							font-size: 45px;
+						}
+				}
+				.plantillas{
+					h3{
+						@include subtitulos;
+						font-size: 32px;
+					}
+					img{
+						height: 250px;
+						width: 250px;
+						padding: 3px;
+					}
+				}
+		}
 	}
 }
 @media screen and (min-width: 801px){
