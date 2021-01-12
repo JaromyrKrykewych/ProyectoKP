@@ -87,9 +87,7 @@ body{
 					background-color: $color2;
 				}
 				.introduccion--imagen{
-					padding: 10px;
 					box-shadow: 2px 2px 8px;
-					background-color: $color2;
 						img{
 							height: 350px;
 							width: 350px;
@@ -159,8 +157,7 @@ body{
 				.container__articulo__carousel{
 					margin-bottom: 30px;
 					box-shadow: 2px 2px 8px;
-					background-color: $color2;
-					padding: 20px 10px;
+					padding: 0;
 						.carousel-inner{
 							box-shadow: 1px 1px 3px;
 							background-color: #fff;
@@ -190,9 +187,7 @@ body{
 					background-color: $color2;
 				}
 				&--imagen{
-					padding: 10px;
 					box-shadow: 2px 2px 8px;
-					background-color: $color2;
 						img{
 							height: 350px;
 							width: 350px;
@@ -267,6 +262,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	background-color: #fff;
+	margin-bottom: 20px;
 		.titulo__seccion{
 			margin: 30px 0px;
 			padding-top: 10px;
@@ -402,7 +398,6 @@ body{
 .seccion__contacto{
 	background-color: #fff;
 	.box__contacto{
-		display: grid;
 			&__redes{
 				text-align: center;
 					&--iconos{
@@ -448,6 +443,7 @@ body{
 .formulario__chico{
 	margin: 20px auto;
 	box-shadow: 1px 1px 3px;
+	background-color: $color1;
 		label{
 			font-size: 23px;
 		}
@@ -628,37 +624,116 @@ body{
 		}
 	}
 	/*productos*/
-	@each $producto in fundas, chapas, popsockets{
-		.box__productos__#{$producto}{
-			display: flex;
-			flex-direction: column;
+	.titulo__principal {
+		margin-bottom: 0px;
+			h1{
+				font-size: 42px;
+			}
+	}
+	.box__productos{
+		.titulo__seccion{
+			margin: 10px 0px;
+			padding-top: 0;
+			h2{
+				font-size: 35px;
+			}
 		}
 	}
-	.box__productos__chapas{
-		flex-direction: column-reverse;
-			&--imagen{
-				img{
-					width: 320px;
-					height: 300px;
+	@each $producto in fundas, chapas, popsockets{
+		.box__productos__#{$producto}{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+			justify-content: center;
+			margin-bottom: 20px;
+			.box__productos__#{$producto}--texto{
+				text-align: center;
+			}
+			.box__productos__#{$producto}--imagen{
+				justify-content: center;
+					img{
+						height: 250px;
+						width: 250px;
+					}
+			}
+			.box__productos__chapas--texto{
+				grid-row-start: 1;
+				grid-row-end: 2;
+			}
+		}
+	}
+	/*galeria*/
+	.contenedor__fundas{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto repeat(6, 1fr);
+		grid-gap: 10px;
+		padding: 0px 10px;
+			.titulo__seccion{
+				padding-top: 10px;
+				grid-column-start: 1;
+				grid-column-end: 2;
+					h2{
+						font-size: 35px;
+					}
+			}
+			@each $coleccion in cactus, flores, rock, marmol, variado{
+				.#{$coleccion}{
+					display: grid;
+					grid-gap: 8px;
+					grid-template-columns: 1fr;
+					grid-template-rows: auto repeat(4, 1fr);
+					justify-items: center;
+					box-shadow: 1px 1px 4px;
+					padding: 10px;
+						h3{
+							@include subtitulos;
+							grid-column-start: 1;
+							grid-column-end: 2;
+							font-size: 28px;
+						}
+						img{
+							height: 200px;
+							width: 200px;
+							padding: 3px;
+						}
 				}
 			}
 	}
-	/*galeria*/
-	.contenedor__set--imagen{
+	.contenedor__chapas{
 		display: grid;
-		grid-template-rows: repeat(4,1fr);
-		row-gap: 15px;
-		justify-content: center;
-			img:hover{
-				height: 278px;
-				width: 278px;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto repeat(2, 1fr);
+		grid-gap: 10px;
+		padding: 0px 10px;
+			.titulo__seccion{
+				padding-top: 10px;
+				grid-column-start: 1;
+				grid-column-end: 2;
+					h2{
+						font-size: 35px;
+					}
 			}
-	}
-	.contenedor__tipografia{
-		img:hover{
-			height: 380px;
-			width: 300px;
-		}
+			.plantillas{
+				display: grid;
+					grid-gap: 8px;
+					grid-template-columns: 1fr;
+					grid-template-rows: auto repeat(4, 1fr);
+					justify-items: center;
+					box-shadow: 1px 1px 4px;
+					padding: 10px;
+						h3{
+							@include subtitulos;
+							grid-column-start: 1;
+							grid-column-end: 2;
+							font-size: 28px;
+						}
+						img{
+							height: 200px;
+							width: 200px;
+							padding: 3px;
+						}
+			}
 	}
 	/*contacto*/
 	.box__contacto{
@@ -667,12 +742,10 @@ body{
 					font-size: 22px;	
 				}
 					&--iconos{
-						display: grid;
-						grid-template-rows: repeat(2, 1fr);
-						row-gap: 15px;
-						align-content: stretch;
-						padding: 0px;
-						padding-top: 15px;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						padding: 10px;
 					}
 			}
 	}
