@@ -156,16 +156,14 @@ body{
 				}
 				.container__articulo__carousel{
 					margin-bottom: 30px;
-					box-shadow: 2px 2px 8px;
 					padding: 0;
 						.carousel-inner{
-							box-shadow: 1px 1px 3px;
+							box-shadow: 2px 2px 8px;
 							background-color: #fff;
 								.carousel-item{
 										img{
 											height: 400px;
 											width: 400px;
-											border: solid 1px #000;
 										}
 								}
 						}
@@ -300,14 +298,12 @@ body{
 							text-align: left;
 						}
 				}
-		}	
-		@each $producto in fundas, chapas, popsockets{
-				.box__productos__#{$producto}--imagen img{
-					border: double 1px #000;
-					padding: 4px;
-				}
 		}
-
+		@each $producto in fundas, chapas, popsockets{
+			.box__productos__#{$producto}--imagen{
+				box-shadow: 2px 2px 8px;
+			}
+		}
 
 /*galeria.html*/
 @mixin subtitulos {
@@ -354,6 +350,9 @@ body{
 						padding: 5px;
 						background-color: #fff;
 						box-shadow: 1px 1px 4px;
+							&:hover{
+								box-shadow: 3px 3px 10px;
+							}
 					}
 			}
 		}
@@ -393,7 +392,11 @@ body{
 					height: 250px;
 					width: 250px;
 					padding: 5px;
-					box-sizing: 1px 1px 4px;
+					background-color: #fff;
+					box-shadow: 1px 1px 4px;
+						&:hover{
+							box-shadow: 3px 3px 10px;
+						}
 				}
 		}
 } 
@@ -437,8 +440,13 @@ body{
 					background: #fff;
 				}
 				.form-control{
-					border: 2px outset $color1;
+					font-size: 20px;
+					padding: 5px;
+					border: 1px inset $color2;
 					background-color: #fff;
+						&:hover{
+							box-shadow: 2px 2px 8px;
+						}
 				}
 		}
 }
