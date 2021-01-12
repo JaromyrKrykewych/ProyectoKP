@@ -795,7 +795,6 @@ body{
 		}
 	}
 }
-
 @media screen and (min-width: 576px) and (max-width: 767px){
 	/*header*/
 	.navbar-brand-aparecer{
@@ -885,7 +884,6 @@ body{
 				}
 		}
 	}
-	
 	/*conocenos.html*/
 	.seccion__introduccion{
 		.container__intro{
@@ -1022,7 +1020,6 @@ body{
 				}
 			}
 	}
-}
 	/*contacto*/
 	.box__contacto{
 			&__redes{
@@ -1042,12 +1039,6 @@ body{
 		.bloque__footer--titulo h2{
 			font-size: 40px;
 		}
-		.bloque__footer--lista{
-			li{
-				display: flex;
-				flex-direction: column;
-			}
-		}
 		.modal-header--titulo{
 			text-align: left;
 		}
@@ -1064,6 +1055,7 @@ body{
 				} 
 		}
 	}
+}
 @media screen and (min-width: 768px) and (max-width: 1199px){
 	/*index.html*/
 	.seccion__introduccion{

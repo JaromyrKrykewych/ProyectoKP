@@ -1064,38 +1064,29 @@ body {
     .contenedor__chapas .plantillas img {
       height: 250px;
       width: 250px;
-      padding: 3px; } }
-
-/*contacto*/
-.box__contacto__redes h3 {
-  font-size: 22px; }
-
-.box__contacto__redes--iconos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 10px; }
-
-/*footer*/
-.bloque__footer .bloque__footer--titulo h2 {
-  font-size: 40px; }
-
-.bloque__footer .bloque__footer--lista li {
-  display: flex;
-  flex-direction: column; }
-
-.bloque__footer .modal-header--titulo {
-  text-align: left; }
-
-.bloque__footer .modal-body {
-  font-size: 15px; }
-  .bloque__footer .modal-body .card {
-    padding: 0px;
-    margin: 0px; }
-    .bloque__footer .modal-body .card button {
-      font-size: 18px;
+      padding: 3px; }
+  /*contacto*/
+  .box__contacto__redes h3 {
+    font-size: 22px; }
+  .box__contacto__redes--iconos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px; }
+  /*footer*/
+  .bloque__footer .bloque__footer--titulo h2 {
+    font-size: 40px; }
+  .bloque__footer .modal-header--titulo {
+    text-align: left; }
+  .bloque__footer .modal-body {
+    font-size: 15px; }
+    .bloque__footer .modal-body .card {
       padding: 0px;
       margin: 0px; }
+      .bloque__footer .modal-body .card button {
+        font-size: 18px;
+        padding: 0px;
+        margin: 0px; } }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   /*index.html*/
