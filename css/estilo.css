@@ -452,10 +452,10 @@ body {
   .seccion__contacto .box__contacto__redes {
     text-align: center; }
     .seccion__contacto .box__contacto__redes--iconos {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 40px 100px; }
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      justify-content: center; }
       .seccion__contacto .box__contacto__redes--iconos li {
         list-style: none; }
         .seccion__contacto .box__contacto__redes--iconos li a {
@@ -823,13 +823,13 @@ body {
         width: 250px;
         padding: 3px; }
   /*contacto*/
-  .box__contacto__redes h3 {
+  .box__contacto .box__contacto__redes h3 {
     font-size: 22px; }
-  .box__contacto__redes--iconos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px; }
+  .box__contacto .box__contacto__redes .box__contacto__redes--iconos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px; }
   /*footer*/
   .bloque__footer .bloque__footer--titulo h2 {
     font-size: 40px; }

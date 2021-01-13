@@ -407,10 +407,10 @@ body{
 			&__redes{
 				text-align: center;
 					&--iconos{
-						display: flex;
-						flex-direction: row;
-						justify-content: space-around;
-						padding: 40px 100px;
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: 1fr;
+						justify-content: center;
 							& li{
 								list-style: none;
 									& a{
@@ -763,15 +763,15 @@ body{
 	}
 	/*contacto*/
 	.box__contacto{
-			&__redes{
+			.box__contacto__redes{
 				h3{
 					font-size: 22px;	
 				}
-					&--iconos{
-						display: flex;
-						flex-direction: row;
-						flex-wrap: wrap;
-						padding: 10px;
+					.box__contacto__redes--iconos{
+						display: grid;
+						grid-template-columns: 1fr;
+						grid-template-rows: 1fr 1fr;
+						grid-gap: 10px;
 					}
 			}
 	}
