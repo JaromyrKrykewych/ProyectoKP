@@ -1,6 +1,7 @@
 $fonttitle:'Baloo Bhaina 2', cursive;
 $color1: #a3ce43;
 $color2: #8cb929;
+$color3: #5b8109;
 
 *{
 	padding: 0;
@@ -8,10 +9,22 @@ $color2: #8cb929;
 }
 body{
 	font-family: 'PT Sans Narrow', sans-serif;
-	line-height: 1,5;
 	font-size: 25px;
 }
 /*header*/
+.enlace_seccionInteractiva{
+	background-color: $color3;
+	top: 0px;
+	right: 0px;
+	position: fixed;
+	border-radius: 60%;
+	padding: 20px;
+	margin: 10px;
+		a{
+			font-size: 24px;
+			color: #fff;
+		}
+}
 .header__logo{
 	background-image: radial-gradient(circle at 45px 45px, $color1 0%, rgba(0, 0, 255, 0) 50%, $color2 95%);
 	padding: 40px 0px 20px 0px; 
@@ -465,6 +478,43 @@ body{
 			padding: 0px 3px;
 		}
 }
+/*Sección Interactiva*/
+.box__pedido{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 30px;
+	margin: 30px 50px;
+	font-size: 20px;
+	@each $var in fundas, chapas, popsockets {
+		.box__pedido__#{$var}{
+			background-color: $color2;
+			padding: 20px;
+			.box__variable{
+				display: grid;
+				grid-template-rows: repeat(7, 1fr);
+				grid-template-columns: 1fr;
+				grid-gap: 10px;
+				.prompt__variable{
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: 1fr;
+				}
+			}
+			
+		}
+	}
+			
+}
+.carrito{
+	text-align: center;
+	margin-bottom: 50px;
+		button{
+			background-color: $color2;
+			padding: 10px;
+		}
+}
+
 /*Footer*/
 .bloque__footer{
 	color: white;
