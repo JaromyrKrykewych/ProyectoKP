@@ -479,6 +479,15 @@ body{
 		}
 }
 /*Sección Interactiva*/
+.login__usuario{
+	margin-left: 50px;
+		h3{
+			font-size: 40px;
+		}
+		input, button {
+			font-size: 25px;
+		}
+}
 .box__pedido{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);

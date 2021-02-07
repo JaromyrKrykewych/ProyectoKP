@@ -1,3 +1,62 @@
+//Bienvenida
+
+let titulo = document.getElementById("titulo_principal")
+//console.log(titulo)
+//console.log(titulo.innerHTML)
+
+let ingreso = document.getElementById("login_usuario")
+//console.log(ingreso)
+
+let usuario = document.getElementById("loginUsuario")
+//console.log(usuario)
+
+let usuarioName = document.getElementById("usuario")
+//console.log(usuarioName.value)
+
+//Suponemos que el usuario ingresa su nombre mediante el input
+usuarioName = prompt("Por Favor Ingresa tu nombre")
+//console.log(usuarioName)
+
+ingreso.removeChild(usuario)
+ingreso.removeChild(document.getElementById("mensaje_principal"))
+
+let bienvenida = document.createElement("h3")
+let saludo = document.createTextNode("Bienvenido " + usuarioName + ", ya puedes comenzar tu pedido!")
+
+bienvenida.appendChild(saludo)
+ingreso.appendChild(bienvenida)
+
+//opciones para el pedido
+
+let opciones = document.getElementsByClassName("prompt__variable")
+console.log(opciones)
+
+/*
+ya que manejo las opciones que el usuario puede escoger con la misma clase, pense que
+podría obtener sus datos con el siguiente for, podría crear una función con la cual obtenga
+y devuelva datos de esa manera? o no es muy eficaz?   
+*/
+
+for (let i=0; i < opciones.length; i++){
+    console.log(opciones[2])
+    console.log(opciones[2].innerHTML)
+    console.log(opciones[2].getElementsByTagName("option"))
+    console.log(opciones[2].textContent)
+    break
+}
+
+
+
+
+
+
+
+
+
+
+//Pedido
+
+
 let productos = ["Fundas Personalizadas", "Chapas Personalizadas", "Popsockets Personalizados"]
 
 function articuloFunda (modeloCelular, materialFunda, colorBordes){
@@ -23,60 +82,4 @@ let modeloChapa = ["Uno", "Dos", "Tres", "Cuatro"]
 let tamanioChapa = ["Chico", "Mediano"]
 let tipografiaChapa = ["Fuente 1", "Fuente 2", "Fuente 3", "Fuente 4"] 
 
-alert("Bienvenido a Kiwik! Accediste a generar tu pedido de diseño de chapa personalizada")
-alert("En la sección Galeria podrás encontrar nuestros modelos de chapas, comencemos tu pedido!")
-let modeloUno = prompt("Que modelo deseas para tu funda",modeloChapa.toString())
-modeloUno = modeloUno.toUpperCase()
-for (let i=0; i < modeloChapa.length; i++){
-    if (modeloUno == modeloChapa[i].toUpperCase()){
-        console.log("Haz escogido el modelo " + modeloUno)        
-    }  /*else {
-        alert("No ingresaste un valor valido, por ende se te asignará el modelo: " + modeloChapa[0])
-        modeloUno = modeloChapa[0]
-        console.log("Se te ha asignado el modelo " + modeloUno)
-        break
-        }*/   
-}
-let tamanioUno = prompt("Que tamaño de chapa precisas",tamanioChapa.toString())
-tamanioUno = tamanioUno.toLowerCase()
-for (let i=0; i < tamanioChapa.length; i++){
-    if (tamanioUno == tamanioChapa[i].toLowerCase()){
-        console.log("Haz escogido el tamaño " + tamanioUno)
-        //break        
-    } /*else if (tamanioUno != tamanioChapa[i].toLowerCase()){
-        alert("El tamaño no es valido, por favor escoge una opción valida")
-        tamanioUno = prompt("Que tamaño deseas para tu chapa",tamanioChapa.toString())
-        tamanioUno = tamanioUno.toLowerCase()
-        if ( tamanioUno == tamanioChapa[i].toLowerCase()){
-            console.log("Haz escogido el modelo " + tamanioUno)
-            break
-        } else {
-            alert("No ingresaste un valor valido, por ende se te asignará el tamaño: " + tamanioChapa[0])
-            tamanioUno = tamanioChapa[0]
-            console.log("Se te ha asignado el modelo " + tamanioUno)
-            break
-        }
-    }*/
-}
-let nombreUno = prompt("Decime el nombre de tu mascota")
-console.log(nombreUno)
-
-let tipografiaUno = prompt("Por último escoge la tipografía para imprimir el nombre de tu mascota", tipografiaChapa.toString())
-tipografiaUno = tipografiaUno.toLowerCase()
-for (let i=0; i < tamanioChapa.length; i++){
-    if (tipografiaUno == tipografiaChapa[i].toLowerCase()){
-        console.log("Haz escogido la tipografía " + tipografiaUno)
-        //break        
-    }
-}
-let clienteUno = [modeloUno, tamanioUno, nombreUno, tipografiaUno]
-console.log(clienteUno)
-
-let numeroUno = prompt("Deseas agregar un numero de contacto para imprimir?","Ej: 911 xxxx xxxx")
-
-clienteUno.push(numeroUno)
-console.log(clienteUno)
-
-
-//console.log(productos, iphone, motorola)
 

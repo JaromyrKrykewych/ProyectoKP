@@ -508,6 +508,13 @@ body {
     padding: 0px 3px; }
 
 /*Sección Interactiva*/
+.login__usuario {
+  margin-left: 50px; }
+  .login__usuario h3 {
+    font-size: 40px; }
+  .login__usuario input, .login__usuario button {
+    font-size: 25px; }
+
 .box__pedido {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

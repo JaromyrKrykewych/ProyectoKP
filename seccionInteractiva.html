@@ -55,7 +55,16 @@
     </header>    
 <!--Contenido-->
 <div class="titulo__principal titulo__principal--animacion">
-	<h1>Procesa tu Pedido</h1>
+	<h1 id="titulo_principal">Procesa tu Pedido</h1>
+</div>
+<div id="login_usuario" class="login__usuario">
+	<h3 id="mensaje_principal">Ingresa tu identificación para comenzar tu pedido</h3>
+	<div id="loginUsuario">
+		<input type="text" id="usuario" value="Nombre">
+		<input type="text" id="clave" value="Clave">
+		<button type="submit">Ingresar</button>
+	</div>
+	
 </div>
 <section class="box__pedido">
 	<div class="box__pedido__fundas">
@@ -144,7 +153,7 @@
 		</form>
 	</div>
 </section>
-<div class="carrito">
+<div id="carrito" class="carrito">
 	<button>Ver Carrito</button>	
 </div>
 <!--Footer-->				
