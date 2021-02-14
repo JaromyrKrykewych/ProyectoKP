@@ -509,11 +509,38 @@ body {
 
 /*Sección Interactiva*/
 .login__usuario {
-  margin-left: 50px; }
+  margin: 50px 0px 100px 0px;
+  text-align: center; }
   .login__usuario h3 {
-    font-size: 40px; }
+    font-size: 40px;
+    margin-bottom: 50px; }
   .login__usuario input, .login__usuario button {
     font-size: 25px; }
+  .login__usuario #boxProductos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .login__usuario #boxProductos #boxFunda {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      background-color: #a3ce43;
+      border-radius: 20px;
+      padding: 30px; }
+    .login__usuario #boxProductos #boxChapa {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      background-color: #a3ce43;
+      border-radius: 20px;
+      padding: 30px; }
+    .login__usuario #boxProductos #boxPopsocket {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      background-color: #a3ce43;
+      border-radius: 20px;
+      padding: 30px; }
 
 .box__pedido {
   display: grid;

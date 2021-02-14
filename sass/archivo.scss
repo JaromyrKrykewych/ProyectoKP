@@ -480,12 +480,29 @@ body{
 }
 /*Sección Interactiva*/
 .login__usuario{
-	margin-left: 50px;
+	margin: 50px 0px 100px 0px;
+	text-align: center;
 		h3{
 			font-size: 40px;
+			margin-bottom: 50px;
 		}
 		input, button {
 			font-size: 25px;
+		}
+		#boxProductos{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+				@each $product in Funda, Chapa, Popsocket {
+					#box#{$product}{
+						display: grid;
+						grid-template-columns: 1fr;
+						grid-gap: 20px;
+						background-color: $color1;
+						border-radius: 20px;
+						padding: 30px;
+					}
+				}
 		}
 }
 .box__pedido{
