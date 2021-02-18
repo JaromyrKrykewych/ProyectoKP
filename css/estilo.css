@@ -541,6 +541,11 @@ body {
       background-color: #a3ce43;
       border-radius: 20px;
       padding: 30px; }
+  .login__usuario #btnCarrito {
+    align-items: center;
+    background-color: #8cb929;
+    margin-top: 40px;
+    padding: 5px; }
 
 .box__pedido {
   display: grid;

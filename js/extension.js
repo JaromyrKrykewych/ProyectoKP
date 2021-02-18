@@ -40,6 +40,8 @@ function crearOpciones(){
     titulo.innerHTML = "Materializa tu esencia"
 
     //variables
+    let divCarrito = document.createElement("button")
+    let titleCarrito = document.createTextNode("Ver Carrito")
     let divProductos = document.createElement("div")
     let divFunda = document.createElement("div")
     let divChapa = document.createElement("div")
@@ -88,9 +90,11 @@ function crearOpciones(){
     
     //DOM
     ingreso.appendChild(divProductos)
+    ingreso.appendChild(divCarrito)
     divProductos.appendChild(divFunda)
     divProductos.appendChild(divChapa)
     divProductos.appendChild(divPopsocket)
+    divCarrito.appendChild(titleCarrito)
     divFunda.appendChild(titleFunda)
     titleFunda.appendChild(titleTextFunda)
     divChapa.appendChild(titleChapa)
@@ -136,12 +140,62 @@ function crearOpciones(){
     //DOM Agregar Carrito
     divFunda.appendChild(botonCarrito)
     botonCarrito.appendChild(textCarrito)
+    //Modal del Carrito
+    let padreModal = document.createElement("div")
+    padreModal.setAttribute("style", "modal")
+    padreModal.setAttribute("tabindex", "-1")
+    padreModal.setAttribute("role", "dialog")
     
+    let dialogModal = document.createElement("div")
+    padreModal.appendChild(dialogModal)
+    dialogModal.setAttribute("style", "modal-dialog")
+    dialogModal.setAttribute("role", "document")
+
+    let contentModal = document.createElement("div")
+    dialogModal.appendChild(contentModal)
+    contentModal.setAttribute("style", "modal-content")
+
+    let headerModal = document.createElement("div")
+    contentModal.appendChild(headerModal)
+    headerModal.setAttribute("style", "modal-header")
+
+    let titleModal = document.createElement("h5")
+    headerModal.appendChild(titleModal)
+    titleModal.setAttribute("style", "modal-title")
+        let nodeTitleModal = document.createTextNode("Mi Pedido")
+        titleModal.appendChild(nodeTitleModal)
+    //no agregue el botón de cierre, primero verificaré si es necesario
+
+    let bodyModal = document.createElement("div")
+    contentModal.appendChild(bodyModal)
+    bodyModal.setAttribute("style", "modal-body")
+    
+    let footerModal = document.createElement("div")
+    contentModal.appendChild(footerModal)
+    footerModal.setAttribute("style", "modal-footer")
+
+    let botonAprobar = document.createElement("button")
+    footerModal.appendChild(botonAprobar)
+    botonAprobar.setAttribute("style", "btn")
+    botonAprobar.setAttribute("style", "btn-primary")
+
+    let botonCancelar = document.createElement("button")
+    footerModal.appendChild(botonCancelar)
+    botonCancelar.setAttribute("style", "btn")
+    botonCancelar.setAttribute("style", "btn-primary")
+    padreModal.setAttribute("style", "margin-top: 40px")
+
     //CSS and Attributes
     divProductos.setAttribute("id", "boxProductos")
+    divCarrito.setAttribute("id", "btnCarrito")
+    divCarrito.addEventListener("click", mostrarModal)
     divFunda.setAttribute("id", "boxFunda")
     divChapa.setAttribute("id", "boxChapa")
     divPopsocket.setAttribute("id", "boxPopsocket")
+
+    function mostrarModal(){
+        ingreso.appendChild(padreModal)
+    }
     
     botonCarrito.addEventListener("click", agregarCarrito)
     let modeloEscogido = ""
@@ -158,10 +212,9 @@ function crearOpciones(){
         let primerProducto = new articuloFunda (modeloEscogido, materialEscogido, bordeEscogido)
         let divProducto = document.createElement("div")
         let textProducto = document.createTextNode("Haz anexado a tu pedido una funda con las siguientes especificaciones: *" + primerProducto.modeloCelular + " * "  + primerProducto.materialFunda + " * " + primerProducto.colorBordes)
-        ingreso.appendChild(divProducto)
+        bodyModal.appendChild(divProducto)
         divProducto.appendChild(textProducto)
-        divProducto.setAttribute("style", "margin-top: 40px")
-        //return (primerProducto.modeloCelular, primerProducto.materialFunda, primerProducto.colorBordes)
+        //divProducto.setAttribute("style", "margin-top: 40px")
     }
     
 }

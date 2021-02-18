@@ -504,6 +504,12 @@ body{
 					}
 				}
 		}
+		#btnCarrito{
+			align-items: center;
+			background-color: $color2;
+			margin-top: 40px;
+			padding: 5px;
+		}
 }
 .box__pedido{
 	display: grid;
