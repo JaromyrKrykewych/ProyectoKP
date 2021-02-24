@@ -527,6 +527,9 @@ body {
       background-color: #a3ce43;
       border-radius: 20px;
       padding: 30px; }
+      .login__usuario #boxProductos #boxFunda img {
+        height: 300px;
+        width: 250px; }
     .login__usuario #boxProductos #boxChapa {
       display: grid;
       grid-template-columns: 1fr;
@@ -534,6 +537,9 @@ body {
       background-color: #a3ce43;
       border-radius: 20px;
       padding: 30px; }
+      .login__usuario #boxProductos #boxChapa img {
+        height: 300px;
+        width: 250px; }
     .login__usuario #boxProductos #boxPopsocket {
       display: grid;
       grid-template-columns: 1fr;
@@ -541,11 +547,18 @@ body {
       background-color: #a3ce43;
       border-radius: 20px;
       padding: 30px; }
+      .login__usuario #boxProductos #boxPopsocket img {
+        height: 300px;
+        width: 250px; }
   .login__usuario #btnCarrito {
     align-items: center;
     background-color: #8cb929;
     margin-top: 40px;
     padding: 5px; }
+  .login__usuario .divProductoFunda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; }
 
 .box__pedido {
   display: grid;
