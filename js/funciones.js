@@ -14,13 +14,24 @@ function guardarUsuario(){
 
 function mostrarOpciones(){
     $(loginUsuario).append(divProductos, divBtnModal)
-    $(divProductos).append(divFunda, divChapa, divPopsocket)
+}
+
+function addOptions(options) {      //es6 <--ESTUDIAR
+    let select = $('<select>')
+    options.forEach((o, i) => {
+        let opt = $(`<option ${i === 0 ? 'selected disabled' : ''} value="${i === 0 ? '' : o}">`)
+        opt.html(o);
+        $(select).append(opt)
+    });
+
+    return select;
 }
 
 function opcionFunda(){
     $(mensajePrincipal).hide()
     $(divChapa).hide()
     $(divPopsocket).hide()
+    
     //Dom en divFunda
     $(imgFunda).hide()
     $(botonFunda).hide()
@@ -37,6 +48,8 @@ function seleccion(){
 }
 
 function fundaAgregada(){
+    
+    //ingreso en modal
     $(itemMarca).html(marcaEscogida)
     $(itemMaterial).html(materialEscogido)
     $(itemBorde).html(bordeEscogido)
