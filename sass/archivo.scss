@@ -518,6 +518,18 @@ body{
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;
+			margin: 10px;
+			padding: 5px;
+			background-color: $color1;
+			border: solid 1px $color3;
+				h4{
+					grid-column-start: 1;
+					grid-column-end: 3;
+					font-size: 25px;
+				}
+				li{
+					font-size: 22px;
+				}
 		}
 }
 .box__pedido{
