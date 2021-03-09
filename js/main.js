@@ -46,7 +46,7 @@ $(divBtnModal).append(modal)
 
 $(document).ready(function(){
     $.ajax({
-        url: 'http://worldtimeapi.org/api/timezone/america/argentina/Buenos_Aires',
+        url: 'https://worldtimeapi.org/api/timezone/america/argentina/Buenos_Aires',
         type: 'GET',
         dataType: 'json'
     }).done(function(data){
@@ -56,6 +56,21 @@ $(document).ready(function(){
         console.log(xhr, status, error)
     })
 })
+$("#clima").click(function(){
+    $.ajax({
+        url: 'https://api.openweathermap.org/data/2.5/weather?id=3433955&appid=9d307f28651f2b5ec8f3e8ca27dc8410',
+        type: 'GET',
+        dataType: 'json'
+    }).done(function(result){
+        console.log(result.main.temp)
+        $("#fecha_hora").html("La temperatura es de " + Conversion(parseInt(result.main.temp)) + " °C y vientos de " + result.wind.speed + " km/h"  )
+    })
+})
+function Conversion (valor){
+    let celcius = 0
+    celcius = (valor - 273,15)   
+    return celcius
+}
 
     /*guardarUsuario*/
 
