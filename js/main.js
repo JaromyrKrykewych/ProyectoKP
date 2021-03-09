@@ -43,7 +43,7 @@ $(modalDialog).append(modalContent)
 $(modal).append(modalDialog)
 $(divBtnModal).append(modal)
 
-
+/*
 $(document).ready(function(){
     $.ajax({
         url: 'https://worldtimeapi.org/api/timezone/america/argentina/Buenos_Aires',
@@ -55,7 +55,7 @@ $(document).ready(function(){
     }).fail(function(xhr, status, error){
         console.log(xhr, status, error)
     })
-})
+})*/
 $("#clima").click(function(){
     $.ajax({
         url: 'https://api.openweathermap.org/data/2.5/weather?id=3433955&appid=9d307f28651f2b5ec8f3e8ca27dc8410',
