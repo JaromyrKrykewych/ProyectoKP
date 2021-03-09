@@ -59,6 +59,8 @@ body {
     padding-bottom: 30px;
     font-family: "Baloo Bhaina 2", cursive;
     text-align: center; }
+    .seccion__introduccion .titulo__principal span {
+      float: right; }
     .seccion__introduccion .titulo__principal h1 {
       font-size: 70px;
       color: black; }
@@ -568,6 +570,20 @@ body {
       grid-column-end: 3;
       font-size: 25px; }
     .login__usuario .divProductoFunda li {
+      font-size: 22px; }
+  .login__usuario .divProductoChapa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 10px;
+    padding: 5px;
+    background-color: #a3ce43;
+    border: solid 1px #5b8109; }
+    .login__usuario .divProductoChapa h4 {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      font-size: 25px; }
+    .login__usuario .divProductoChapa li {
       font-size: 22px; }
 
 .box__pedido {

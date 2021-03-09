@@ -4,6 +4,13 @@ function articuloFunda (marcaCelular, materialFunda, colorBordes){
     this.colorBordes = colorBordes;
 }
 
+function articuloChapa (modeloChapa, tamanioChapa, nombreMascota, tipografiaChapa){
+    this.modeloChapa = modeloChapa;
+    this.tamanioChapa = tamanioChapa;
+    this.nombreMascota = nombreMascota;
+    this.tipografiaChapa = tipografiaChapa;
+}
+
 function guardarUsuario(){
     $(tituloPrincipal).text("Materializa tu esencia")
     $(mensajePrincipal).text("Bienvenido " + usuario.val() + ", ya podes comenzar tu pedido")
@@ -41,10 +48,31 @@ function opcionFunda(){
     $(divFunda).append(agregarFunda)
 }
 
+function opcionChapa(){
+    $(mensajePrincipal).hide()
+    $(divFunda).hide()
+    $(divPopsocket).hide()
+
+    //Dom en divChapa
+    $(imgChapa).hide()
+    $(botonChapa).hide()
+    $(divChapa).append(modeloChapa, selectModeloChapa)
+    $(divChapa).append(tamanioChapa, selectTamanio)
+    $(divChapa).append(tipografiaChapa, selectTipografia)
+    $(divChapa).append(nombreMascotaLabel, nombreMascota)
+    $(divChapa).append(agregarChapa)
+}
+
 function seleccion(){
     marcaEscogida = $(selectMarca).val()
     materialEscogido = $(selectMaterial).val()
     bordeEscogido = $(selectBorde).val()
+}
+
+function selectChapa(){
+    modeloChapaEscogido = $(selectModeloChapa).val()
+    tamanioChapaEscogido = $(selectTamanio).val()
+    tipografiaChapaEscogido = $(selectTipografia).val()
 }
 
 function fundaAgregada(){
@@ -56,4 +84,22 @@ function fundaAgregada(){
     $(modalBody).html('')
     $(modalBody).append(divProductoFunda)
     productoFunda = new articuloFunda(marcaEscogida, materialEscogido, bordeEscogido)    
+}
+
+function chapaAgregada(){
+    productoChapa = {
+        'Cliente': usuario.val(),
+        'modelo': modeloChapaEscogido,
+        'tamanio': tamanioChapaEscogido,
+        'tipografia': tipografiaChapaEscogido,
+        'nombreMascota': nombreMascota.val()
+    }
+
+    $(modalBody).html('')
+    $(itemModeloChapa).html(productoChapa.modelo)
+    $(itemTamanioChapa).html(productoChapa.tamanio)
+    $(itemTipografiaChapa).html(productoChapa.tipografia)
+    $(itemNombreMascota).html(productoChapa.nombreMascota)
+
+    $(divProductoChapa).appendTo(modalBody)
 }

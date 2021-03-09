@@ -67,6 +67,9 @@ body{
 			padding-bottom: 30px;
 			font-family: $fonttitle;
 			text-align: center;
+				span{
+					float: right;
+				}
 				h1{
 					font-size: 70px;
 					color: black;
@@ -515,6 +518,23 @@ body{
 			padding: 5px;
 		}
 		.divProductoFunda{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			margin: 10px;
+			padding: 5px;
+			background-color: $color1;
+			border: solid 1px $color3;
+				h4{
+					grid-column-start: 1;
+					grid-column-end: 3;
+					font-size: 25px;
+				}
+				li{
+					font-size: 22px;
+				}
+		}
+		.divProductoChapa{
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr 1fr 1fr;

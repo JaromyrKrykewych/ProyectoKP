@@ -43,6 +43,20 @@ $(modalDialog).append(modalContent)
 $(modal).append(modalDialog)
 $(divBtnModal).append(modal)
 
+
+$(document).ready(function(){
+    $.ajax({
+        url: 'http://worldtimeapi.org/api/timezone/america/argentina/Buenos_Aires',
+        type: 'GET',
+        dataType: 'json'
+    }).done(function(data){
+        console.log(data)
+        $("#fecha_hora").html( "Buenos Aires, " + data.datetime)
+    }).fail(function(xhr, status, error){
+        console.log(xhr, status, error)
+    })
+})
+
     /*guardarUsuario*/
 
 //Variable función guardarUsuario
@@ -122,8 +136,9 @@ bordeFunda.html('Borde Funda')
 //Input agregar Funda
 let agregarFunda = $('<input type="button" value="Agregar">')
 
-//Evento opcionFunda
+//Evento Escoger opcion
 $(botonFunda).click(opcionFunda)
+$(botonChapa).click(opcionChapa)
 
 //selección
 $(selectMarca).change(seleccion)
@@ -144,7 +159,58 @@ let itemBorde = $('<li>')
 itemProducto.html('Funda Personalizada')
 $(divProductoFunda).append(itemProducto, itemMarca, itemMaterial, itemBorde)
 
-//Evento Agregar funda a Carrito
-$(agregarFunda).click(fundaAgregada)
+    /* variables opcionChapas */
 
+//Modelo Chapa
+let modeloChapa = $('<label>')
+let selectModeloChapa = addOptions(['Modelo Chapa', 'Uno', 'Dos', 'Tres', 'Cuatro', 'Cinco', 'Seis', 'Siete', 'Ocho'])
+
+modeloChapa.html('Modelo Chapa')
+
+//Tamaño Chapa
+let tamanioChapa = $('<label>')
+let selectTamanio = addOptions(['Tamaño Chapa', 'Chico', 'Mediano'])
+
+tamanioChapa.html('Tamaño Chapa')
+
+//Tipografía Chapa
+let tipografiaChapa = $('<label>')
+let selectTipografia = addOptions(['Tipografía', 'Tipografía 1', 'Tipografía 2', 'Tipografía 3', 'Tipografía 4', 'Tipografía 5', 'Tipografía 6', 'Tipografía 7', 'Tipografía 8', 'Tipografía 9', 'Tipografía 10', 'Tipografía 11', 'Tipografía 12'])
+
+tipografiaChapa.html('Tipografía Chapa')
+
+//Nombre Mascota
+let nombreMascotaLabel = $('<label>')
+let nombreMascota = $('<input type="text" placeholder="Nombre">')
+
+nombreMascotaLabel.html('Ingresa Nombre de tu Mascota')
+
+//Input agregar Chapa
+let agregarChapa = $('<input type="button" value="Agregar">')
+
+//Selección Chapas
+$(selectModeloChapa).change(selectChapa)
+$(selectTamanio).change(selectChapa)
+$(selectTipografia).change(selectChapa)
+
+    /*Variables agregr Chapa a carrito*/
+
+let modeloChapaEscogido = ""
+let tamanioChapaEscogido = ""
+let tipografiaChapaEscogido = ""
+let divProductoChapa = $('<div class="divProductoChapa">')
+let productoChapa = {}
+let itemProductoChapa = $('<h4>')
+let itemModeloChapa = $('<li>')
+let itemTamanioChapa = $('<li>')
+let itemTipografiaChapa = $('<li>')
+let itemNombreMascota = $('<li>')
+
+$(itemProductoChapa).html("Chapa Perzonalizada")
+$(divProductoChapa).append(itemProductoChapa, itemModeloChapa, itemTamanioChapa, itemTipografiaChapa, itemNombreMascota)
+
+
+//Evento Agregar a Carrito
+$(agregarFunda).click(fundaAgregada)
+$(agregarChapa).click(chapaAgregada)
 
