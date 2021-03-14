@@ -44,18 +44,6 @@ $(modal).append(modalDialog)
 $(divBtnModal).append(modal)
 
 /*
-$(document).ready(function(){
-    $.ajax({
-        url: 'https://worldtimeapi.org/api/timezone/america/argentina/Buenos_Aires',
-        type: 'GET',
-        dataType: 'json'
-    }).done(function(data){
-        console.log(data)
-        $("#fecha_hora").html( "Buenos Aires, " + data.datetime)
-    }).fail(function(xhr, status, error){
-        console.log(xhr, status, error)
-    })
-})*/
 $("#clima").click(function(){
     $.ajax({
         url: 'https://api.openweathermap.org/data/2.5/weather?id=3433955&appid=9d307f28651f2b5ec8f3e8ca27dc8410',
@@ -71,7 +59,7 @@ function Conversion (valor){
     celcius = (valor - 273,15)   
     return celcius
 }
-
+*/
     /*guardarUsuario*/
 
 //Variable función guardarUsuario
@@ -132,7 +120,8 @@ $("#guardarUsuario").click(mostrarOpciones)
 
 //Marca Celular
 let marcaCelular = $('<label>')
-let selectMarca = addOptions(['Marca', 'Samsung', 'Iphone', 'Motorola']);
+let optionsMarca = ['Marca', 'Samsung', 'Iphone', 'Motorola']
+let selectMarca = addOptions(optionsMarca);
 
 marcaCelular.html('Marca Celular')
 
@@ -149,7 +138,18 @@ let selectBorde = addOptions(['Estilo Borde', 'Transparente', 'Negro'])
 bordeFunda.html('Borde Funda')
 
 //Input agregar Funda
-let agregarFunda = $('<input type="button" value="Agregar">')
+let agregarFunda = $('<input type="button" class="addToCart" value="Agregar">') //borrar clase si no la uso
+
+for ( let i=0 ; i < optionsMarca.length ; i++ ) {
+    console.log(optionsMarca[1])
+    $(optionsMarca[1]).click(chooseSamsung)
+}
+function chooseSamsung(){
+    let optionsSamsung = addOptions(["Samsung", "Samsung A30", "Samsung A50", "Samsung A9", "Samsung S9", "Samsung S8", "Samsung S7", "Samsung S8 plus", "Samsung S10 plus"])
+    
+    $(divFunda).append(optionsSamsung)
+}
+
 
 //Evento Escoger opcion
 $(botonFunda).click(opcionFunda)
@@ -201,7 +201,7 @@ let nombreMascota = $('<input type="text" placeholder="Nombre">')
 nombreMascotaLabel.html('Ingresa Nombre de tu Mascota')
 
 //Input agregar Chapa
-let agregarChapa = $('<input type="button" value="Agregar">')
+let agregarChapa = $('<input type="button" class="addToCart" value="Agregar">')  //borrar clase si no la uso
 
 //Selección Chapas
 $(selectModeloChapa).change(selectChapa)
@@ -223,7 +223,6 @@ let itemNombreMascota = $('<li>')
 
 $(itemProductoChapa).html("Chapa Perzonalizada")
 $(divProductoChapa).append(itemProductoChapa, itemModeloChapa, itemTamanioChapa, itemTipografiaChapa, itemNombreMascota)
-
 
 //Evento Agregar a Carrito
 $(agregarFunda).click(fundaAgregada)

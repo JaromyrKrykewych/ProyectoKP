@@ -75,6 +75,23 @@ function selectChapa(){
     tipografiaChapaEscogido = $(selectTipografia).val()
 }
 
+function menuPrincipal(){
+    
+    $(imgFunda).show()          
+    $(botonFunda).show()
+    $(divChapa).show()
+    $(divPopsocket).show()
+    
+    $(marcaCelular).hide()
+    $(selectMarca).hide()
+    $(materialFunda).hide()
+    $(selectMaterial).hide()
+    $(bordeFunda).hide()
+    $(selectBorde).hide()
+    $(agregarFunda).hide()
+
+}
+
 function fundaAgregada(){
     
     //ingreso en modal
@@ -84,6 +101,27 @@ function fundaAgregada(){
     $(modalBody).html('')
     $(modalBody).append(divProductoFunda)
     productoFunda = new articuloFunda(marcaEscogida, materialEscogido, bordeEscogido)    
+
+    menuPrincipal()
+}
+
+function menuPrincipalDos(){
+    
+    $(divFunda).show()
+    $(divPopsocket).show()
+    $(imgChapa).show()
+    $(botonChapa).show()
+
+    $(modeloChapa).hide()
+    $(selectModeloChapa).hide()
+    $(tamanioChapa).hide()
+    $(selectTamanio).hide()
+    $(tipografiaChapa).hide()
+    $(selectTipografia).hide()
+    $(nombreMascotaLabel).hide()
+    $(nombreMascota).hide()
+    $(agregarChapa).hide()
+    
 }
 
 function chapaAgregada(){
@@ -94,12 +132,14 @@ function chapaAgregada(){
         'tipografia': tipografiaChapaEscogido,
         'nombreMascota': nombreMascota.val()
     }
-
+    
     $(modalBody).html('')
     $(itemModeloChapa).html(productoChapa.modelo)
     $(itemTamanioChapa).html(productoChapa.tamanio)
     $(itemTipografiaChapa).html(productoChapa.tipografia)
     $(itemNombreMascota).html(productoChapa.nombreMascota)
-
+    
     $(divProductoChapa).appendTo(modalBody)
+
+    menuPrincipalDos()
 }
