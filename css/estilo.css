@@ -509,133 +509,79 @@ body {
   .formulario__chico select {
     padding: 0px 3px; }
 
-/*Sección Interactiva*/
-.login__usuario {
-  margin: 50px 0px 100px 0px;
+/*javaScript*/
+.titulo__seccion {
+  margin: 30px 0px;
+  padding-top: 10px;
   text-align: center; }
-  .login__usuario h3 {
-    font-size: 40px;
-    margin-bottom: 50px; }
-  .login__usuario input, .login__usuario button {
-    font-size: 25px; }
-  .login__usuario #boxProductos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; }
-    .login__usuario #boxProductos #boxFunda {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 20px;
-      background-color: #a3ce43;
-      border-radius: 20px;
-      padding: 30px; }
-      .login__usuario #boxProductos #boxFunda img {
-        height: 300px;
-        width: 250px; }
-    .login__usuario #boxProductos #boxChapa {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 20px;
-      background-color: #a3ce43;
-      border-radius: 20px;
-      padding: 30px; }
-      .login__usuario #boxProductos #boxChapa img {
-        height: 300px;
-        width: 250px; }
-    .login__usuario #boxProductos #boxPopsocket {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 20px;
-      background-color: #a3ce43;
-      border-radius: 20px;
-      padding: 30px; }
-      .login__usuario #boxProductos #boxPopsocket img {
-        height: 300px;
-        width: 250px; }
-  .login__usuario #btnCarrito {
-    align-items: center;
-    background-color: #8cb929;
-    margin-top: 40px;
-    padding: 5px; }
-  .login__usuario .divProductoFunda {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    margin: 10px;
-    padding: 5px;
-    background-color: #a3ce43;
-    border: solid 1px #5b8109; }
-    .login__usuario .divProductoFunda h4 {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      font-size: 25px; }
-    .login__usuario .divProductoFunda li {
-      font-size: 22px; }
-  .login__usuario .divProductoChapa {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    margin: 10px;
-    padding: 5px;
-    background-color: #a3ce43;
-    border: solid 1px #5b8109; }
-    .login__usuario .divProductoChapa h4 {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      font-size: 25px; }
-    .login__usuario .divProductoChapa li {
-      font-size: 22px; }
+  .titulo__seccion h2 {
+    font-family: "Baloo Bhaina 2", cursive;
+    font-size: 55px; }
 
-.box__pedido {
+.mostrarProductos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 30px;
-  margin: 30px 50px;
-  font-size: 20px; }
-  .box__pedido .box__pedido__fundas {
-    background-color: #8cb929;
-    padding: 20px; }
-    .box__pedido .box__pedido__fundas .box__variable {
-      display: grid;
-      grid-template-rows: repeat(7, 1fr);
-      grid-template-columns: 1fr;
-      grid-gap: 10px; }
-      .box__pedido .box__pedido__fundas .box__variable .prompt__variable {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr; }
-  .box__pedido .box__pedido__chapas {
-    background-color: #8cb929;
-    padding: 20px; }
-    .box__pedido .box__pedido__chapas .box__variable {
-      display: grid;
-      grid-template-rows: repeat(7, 1fr);
-      grid-template-columns: 1fr;
-      grid-gap: 10px; }
-      .box__pedido .box__pedido__chapas .box__variable .prompt__variable {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr; }
-  .box__pedido .box__pedido__popsockets {
-    background-color: #8cb929;
-    padding: 20px; }
-    .box__pedido .box__pedido__popsockets .box__variable {
-      display: grid;
-      grid-template-rows: repeat(7, 1fr);
-      grid-template-columns: 1fr;
-      grid-gap: 10px; }
-      .box__pedido .box__pedido__popsockets .box__variable .prompt__variable {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr; }
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin: 15px; }
+  .mostrarProductos .mostrarFundas {
+    background-color: #a3ce43;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: repeat(9, auto);
+    grid-gap: 15px;
+    justify-content: center; }
+    .mostrarProductos .mostrarFundas h3 {
+      text-align: center;
+      font-size: 35px; }
+    .mostrarProductos .mostrarFundas label {
+      text-align: center;
+      font-size: 30px; }
+    .mostrarProductos .mostrarFundas .dropdown {
+      padding: 2px;
+      font-size: 28px; }
+      .mostrarProductos .mostrarFundas .dropdown button {
+        width: 100%; }
+  .mostrarProductos .mostrarChapas {
+    background-color: #a3ce43;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: repeat(9, auto);
+    grid-gap: 15px;
+    justify-content: center; }
+    .mostrarProductos .mostrarChapas h3 {
+      text-align: center;
+      font-size: 35px; }
+    .mostrarProductos .mostrarChapas label {
+      text-align: center;
+      font-size: 30px; }
+    .mostrarProductos .mostrarChapas .dropdown {
+      padding: 2px;
+      font-size: 28px; }
+      .mostrarProductos .mostrarChapas .dropdown button {
+        width: 100%; }
+      .mostrarProductos .mostrarChapas .dropdown img {
+        height: 50px;
+        width: 60px;
+        margin-right: 15px; }
 
-.carrito {
-  text-align: center;
-  margin-bottom: 50px; }
-  .carrito button {
-    background-color: #8cb929;
-    padding: 10px; }
+#pasoUno {
+  margin: 40px;
+  text-align: center; }
+  #pasoUno input {
+    padding: 0px 10px; }
+
+.box_carrito {
+  width: 300px;
+  margin: 20px auto;
+  text-align: center; }
+  .box_carrito .btn-modal {
+    background-color: #a3ce43;
+    padding: 15px; }
+
+.msjPopsocket p {
+  text-align: center; }
 
 /*Footer*/
 .bloque__footer {
