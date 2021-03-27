@@ -163,3 +163,60 @@ $("#iphone5").click(function() {
 $("#iphone6").click(function() {
     $(btnIphone).html($("#iphone6").html())
 })
+
+const addFundaToCart = () => {
+    const productoFunda = {
+        articulo: 'Funda',
+        marca : $(btnMarcaCelular).text(),
+        modelo : '',
+        materialFunda : $(btnMaterialFunda).text(),
+        bordeFunda : $(btnBordeFunda).text(),
+        showInCart : showFundaInCart = () => {
+            const articulo = 
+                `<div class="divProductInCart">
+                    <h1>${productoFunda.articulo}</h1>
+                    <div>${productoFunda.marca}</div>
+                    <div>${productoFunda.modelo}</div>
+                    <div>${productoFunda.materialFunda}</div>
+                    <div>${productoFunda.bordeFunda}</div>
+                    <input type="button" value="X">
+                </div>`
+                $("#articulosCarrito").append(articulo)
+        }
+    }
+    if ( $(btnMarcaCelular).html() == "Samsung" ) {
+        productoFunda.modelo = $(btnSamsung).text()
+    } else if ( $(btnMarcaCelular).html() == "Motorola" ) {
+        productoFunda.modelo = $(btnMotorola).text()
+    } else if ( $(btnMarcaCelular).html() == "Iphone" ) {
+        productoFunda.modelo = $(btnIphone).text()
+    }
+
+    productosCarrito.push(productoFunda)
+    productoFunda.showInCart()
+}
+
+const addChapaToCart = () => {
+    const productoChapa = {
+        articulo: 'Chapa',
+        modelo : $(btnModeloChapa).text(),
+        tamanio : $(btnTamanioChapa).text(),
+        tipografia: $(btnTipografiaChapa).text(),
+        mascota: $("#nombreMascota").val(),
+        showInCart : showChapaInCart = () => {
+            const articulo = 
+                `<div class="divProductInCart">
+                    <h1>${productoChapa.articulo}</h1>
+                    <div>${productoChapa.modelo}</div>
+                    <div>${productoChapa.tamanio}</div>
+                    <div>${productoChapa.tipografia}</div>
+                    <div>${productoChapa.mascota}</div>
+                    <input type="button" value="X">
+                </div>`
+                $("#articulosCarrito").append(articulo)    
+        }
+    }
+    productosCarrito.push(productoChapa)
+    productoChapa.showInCart()
+}
+

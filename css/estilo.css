@@ -539,7 +539,8 @@ body {
       font-size: 30px; }
     .mostrarProductos .mostrarFundas .dropdown {
       padding: 2px;
-      font-size: 28px; }
+      font-size: 28px;
+      cursor: pointer; }
       .mostrarProductos .mostrarFundas .dropdown button {
         width: 100%; }
   .mostrarProductos .mostrarChapas {
@@ -558,7 +559,8 @@ body {
       font-size: 30px; }
     .mostrarProductos .mostrarChapas .dropdown {
       padding: 2px;
-      font-size: 28px; }
+      font-size: 28px;
+      cursor: pointer; }
       .mostrarProductos .mostrarChapas .dropdown button {
         width: 100%; }
       .mostrarProductos .mostrarChapas .dropdown img {
@@ -579,6 +581,25 @@ body {
   .box_carrito .btn-modal {
     background-color: #a3ce43;
     padding: 15px; }
+  .box_carrito .modal-body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 15px; }
+    .box_carrito .modal-body .divProductInCart {
+      background-color: #8cb929;
+      display: grid;
+      grid-template-columns: 1fr 1fr 30px;
+      grid-template-rows: repeat(3, 1fr); }
+      .box_carrito .modal-body .divProductInCart h1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2; }
+      .box_carrito .modal-body .divProductInCart input {
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column-start: 3;
+        grid-column-end: 4; }
 
 .msjPopsocket p {
   text-align: center; }

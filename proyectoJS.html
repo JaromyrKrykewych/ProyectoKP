@@ -65,7 +65,7 @@
 	
 	<!--Muestra Productos-->
 	<div class="titulo__seccion">
-		<h2>Productos</h2>
+		<h2>Pedido</h2>
 	</div>
 	<div class="mostrarProductos">
 		<div class="mostrarFundas" id="container-funda">
@@ -141,7 +141,7 @@
 					<div class="dropdowm-item" id="borde2">Negro</div>
 				</div>
 			</div>
-			<input type="button" class="btn" value="Agregar Funda">
+			<input type="button" class="btn" id="addToCart-Funda" value="Agregar Funda">
 		</div>
 		<div class="mostrarChapas" id="container-chapa">
 			<h3>Chapas Personalizadas</h3>
@@ -192,8 +192,8 @@
 				</div>
 			</div>
 			<label for="">Nombre de tu Mascota</label>
-			<input type="text" class="btn" placeholder="Nombre de tu Mascota">
-			<input type="button" class="btn" value="Agregar Chapa">
+			<input type="text" class="btn" id="nombreMascota" placeholder="Nombre de tu Mascota">
+			<input type="button" class="btn" id="addToCart-Chapa" value="Agregar Chapa">
 		</div>
 	</div>
 	<div class="box_carrito">
@@ -207,12 +207,12 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="modalCarritoLabel">Modal title</h5>
+						<h5 class="modal-title" id="modalCarritoLabel">Mi Pedido</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body">
+					<div class="modal-body" id="articulosCarrito">
 						
 					</div>
 					<div class="modal-footer">

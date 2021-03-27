@@ -516,6 +516,7 @@ body{
 				.dropdown {
 					padding: 2px;
 					font-size: 28px;
+					cursor: pointer;
 						button {
 							width: 100%;
 						}		
@@ -540,6 +541,7 @@ body{
 				.dropdown {
 					padding: 2px;
 					font-size: 28px;
+					cursor: pointer;
 						button {
 							width: 100%;
 						}
@@ -565,6 +567,31 @@ body{
 		.btn-modal {
 			background-color: $color1;
 			padding: 15px;
+		}
+		.modal-body {
+			display: grid;
+			grid-template-columns: auto;
+			grid-gap: 15px;
+
+			.divProductInCart {
+				background-color: $color2;
+				display: grid;
+				grid-template-columns: 1fr 1fr 30px;
+				grid-template-rows: repeat(3, 1fr);
+					h1 {
+						grid-column-start: 1;
+						grid-column-end: 3;
+						grid-row-start: 1;
+						grid-row-end: 2;
+					}
+					input {
+						grid-row-start: 1;
+						grid-row-end: 4;
+						grid-column-start: 3;
+						grid-column-end: 4;
+					}
+			}
+			
 		}
 }
 .msjPopsocket {
