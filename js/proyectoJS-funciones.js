@@ -64,8 +64,8 @@ $("#tipografia9").click(function() {
 $("#tipografia10").click(function() {
     $(btnTipografiaChapa).html($("#tipografia10").html())
 })
-$("#tipogrfia11").click(function() {
-    $(btnTipografiaChapa).html($("#tipogrfia11").html())
+$("#tipografia11").click(function() {
+    $(btnTipografiaChapa).html($("#tipografia11").html())
 })
 $("#tipografia12").click(function() {
     $(btnTipografiaChapa).html($("#tipografia12").html())
@@ -164,6 +164,15 @@ $("#iphone6").click(function() {
     $(btnIphone).html($("#iphone6").html())
 })
 
+/* const restaurarSelectoresFunda = () => {
+    $(btnMarcaCelular).text() = "Marca Celular"
+    $(btnMaterialFunda).text() = "Material Funda"
+    $(btnBordeFunda).text() = "Borde Funda"
+    $(btnSamsung).text() = "Modelo Samsung"
+    $(btnMotorola).text() = "Modelo Motorola"
+    $(btnIphone).text() = "Modelo Iphone"
+} */
+
 const addFundaToCart = () => {
     const productoFunda = {
         articulo: 'Funda',
@@ -174,15 +183,15 @@ const addFundaToCart = () => {
         showInCart : showFundaInCart = () => {
             const articulo = 
                 `<div class="divProductInCart">
-                    <h1>${productoFunda.articulo}</h1>
-                    <div>${productoFunda.marca}</div>
-                    <div>${productoFunda.modelo}</div>
-                    <div>${productoFunda.materialFunda}</div>
-                    <div>${productoFunda.bordeFunda}</div>
+                    <h1>${productoFunda.articulo} Perzonalizada</h1>
+                    <div>Marca de Celular:<br> ${productoFunda.marca}</div>
+                    <div>Modelo:<br> ${productoFunda.modelo}</div>
+                    <div>Material de Funda:<br> ${productoFunda.materialFunda}</div>
+                    <div>Borde de Funda:<br> ${productoFunda.bordeFunda}</div>
                     <input type="button" value="X">
                 </div>`
                 $("#articulosCarrito").append(articulo)
-        }
+        } 
     }
     if ( $(btnMarcaCelular).html() == "Samsung" ) {
         productoFunda.modelo = $(btnSamsung).text()
@@ -196,6 +205,16 @@ const addFundaToCart = () => {
     productoFunda.showInCart()
 }
 
+const verificarSeleccionFunda = () => {
+    if ( $(btnMarcaCelular).text().trim() == "Marca Celular" || $(btnSamsung).text().trim() == "Modelo Samsung" &&
+    $(btnMotorola).text().trim() == "Modelo Motorola" && $(btnIphone).text().trim() == "Modelo Iphone" ||
+    $(btnMaterialFunda).text().trim() == "Material Funda" || $(btnBordeFunda).text().trim() == "Borde Funda") {
+        swal("Por Favor, Selecciona una opción de cada selector")
+    } else {
+        addFundaToCart()
+    }
+}
+
 const addChapaToCart = () => {
     const productoChapa = {
         articulo: 'Chapa',
@@ -206,11 +225,11 @@ const addChapaToCart = () => {
         showInCart : showChapaInCart = () => {
             const articulo = 
                 `<div class="divProductInCart">
-                    <h1>${productoChapa.articulo}</h1>
-                    <div>${productoChapa.modelo}</div>
-                    <div>${productoChapa.tamanio}</div>
-                    <div>${productoChapa.tipografia}</div>
-                    <div>${productoChapa.mascota}</div>
+                    <h1>${productoChapa.articulo} Perzonalizada</h1>
+                    <div>Modelo:<br> ${productoChapa.modelo}</div>
+                    <div>Tamaño Chapa:<br> ${productoChapa.tamanio}</div>
+                    <div>Tipografía:<br> ${productoChapa.tipografia}</div>
+                    <div>Tu Mascota se llama:<br> ${productoChapa.mascota}</div>
                     <input type="button" value="X">
                 </div>`
                 $("#articulosCarrito").append(articulo)    
@@ -220,3 +239,11 @@ const addChapaToCart = () => {
     productoChapa.showInCart()
 }
 
+const verificarSeleccionChapa = () => {
+    if ( $(btnModeloChapa).text().trim() == "Modelo Chapa" || $(btnTamanioChapa).text().trim() == "Tamaño Chapa" ||
+    $(btnTipografiaChapa).text().trim() == "Tipografía" || $("#nombreMascota").val() == "" ) {
+        swal("Por Favor, Selecciona una opción de cada selector")       
+    } else {
+        addChapaToCart()
+    }
+}

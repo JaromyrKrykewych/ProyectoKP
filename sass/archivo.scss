@@ -578,17 +578,31 @@ body{
 				display: grid;
 				grid-template-columns: 1fr 1fr 30px;
 				grid-template-rows: repeat(3, 1fr);
+				font-size: 25px;
+				justify-content: center;
+				align-items: stretch;
+					div {
+						box-shadow: 1px 1px 2px;
+						padding: auto;
+					}
 					h1 {
+						box-shadow: 1px 1px 2px;
+						padding-top: 18px;
+						margin-bottom: 0px;
+						font-size: 30px;
 						grid-column-start: 1;
 						grid-column-end: 3;
 						grid-row-start: 1;
 						grid-row-end: 2;
 					}
 					input {
+						box-shadow: 1px 1px 2px;
 						grid-row-start: 1;
 						grid-row-end: 4;
 						grid-column-start: 3;
 						grid-column-end: 4;
+						background-color: $color3;
+						border-color: $color3;
 					}
 			}
 			

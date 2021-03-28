@@ -589,17 +589,30 @@ body {
       background-color: #8cb929;
       display: grid;
       grid-template-columns: 1fr 1fr 30px;
-      grid-template-rows: repeat(3, 1fr); }
+      grid-template-rows: repeat(3, 1fr);
+      font-size: 25px;
+      justify-content: center;
+      align-items: stretch; }
+      .box_carrito .modal-body .divProductInCart div {
+        box-shadow: 1px 1px 2px;
+        padding: auto; }
       .box_carrito .modal-body .divProductInCart h1 {
+        box-shadow: 1px 1px 2px;
+        padding-top: 18px;
+        margin-bottom: 0px;
+        font-size: 30px;
         grid-column-start: 1;
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 2; }
       .box_carrito .modal-body .divProductInCart input {
+        box-shadow: 1px 1px 2px;
         grid-row-start: 1;
         grid-row-end: 4;
         grid-column-start: 3;
-        grid-column-end: 4; }
+        grid-column-end: 4;
+        background-color: #5b8109;
+        border-color: #5b8109; }
 
 .msjPopsocket p {
   text-align: center; }

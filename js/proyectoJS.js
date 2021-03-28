@@ -17,13 +17,36 @@ let btnMotorola = $("#selectMotorola")
 let btnIphone = $("#selectIphone")
 
 /*
+* Notificación 'No haz agregado nada al Carrito'
+*/
+let btnCarrito = $("#btnCarrito")
+let modalBody = $("#articulosCarrito")
+
+$(btnCarrito).click(function(e) {
+    let modalBodyText = e.target.nextElementSibling.firstElementChild.firstElementChild.children[1].innerText.trim() 
+    if ( modalBodyText == '' ) {
+        swal("No haz agregado nada a tu carrito")
+    } else {
+        $(btnCarrito).attr('data-target', '#modalCarrito')
+    }     
+})
+
+
+
+/*
 *Agregar productos a carrito de compra 
 */
-
+let btnFunda = $("#addToCart-Funda")
+let btnChapa = $("#addToCart-Chapa") 
 const productosCarrito = []
 
-$("#addToCart-Funda").click(addFundaToCart)
-$("#addToCart-Chapa").click(addChapaToCart)
+$(btnFunda).click(verificarSeleccionFunda)
+$(btnChapa).click(verificarSeleccionChapa)
+
+
+
+// $("#addToCart-Funda").click(addFundaToCart)
+// $("#addToCart-Chapa").click(addChapaToCart)
 
 
 /* 
