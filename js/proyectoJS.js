@@ -43,15 +43,12 @@ const productosCarrito = []
 $(btnFunda).click(verificarSeleccionFunda)
 $(btnChapa).click(verificarSeleccionChapa)
 
-
-
-// $("#addToCart-Funda").click(addFundaToCart)
-// $("#addToCart-Chapa").click(addChapaToCart)
-
-
 /* 
 *Eliminar productos del Carrito 
 */
 
+/*
+*Confirmar Pedido 
+*/
 
-
+$("#confirmarPedido").click(confirmarPedido)

@@ -4,6 +4,9 @@ function guardarUsuario() {
     $("#pasoUno").hide()
 }
 
+/*
+*Select Modelo Chapa 
+*/
 $("#mod1").click(function() {
     $(btnModeloChapa).html($("#mod1").html())
 })
@@ -28,12 +31,20 @@ $("#mod7").click(function() {
 $("#mod8").click(function() {
     $(btnModeloChapa).html($("#mod8").html())
 })
+
+/*
+*Select Tamaño Chapa 
+*/
 $("#tamanio1").click(function() {
     $(btnTamanioChapa).html($("#tamanio1").html())
 })
 $("#tamanio2").click(function() {
     $(btnTamanioChapa).html($("#tamanio2").html())
 })
+
+/*
+*Select Tipografía Chapa 
+*/
 $("#tipografia1").click(function() {
     $(btnTipografiaChapa).html($("#tipografia1").html())
 })
@@ -70,6 +81,10 @@ $("#tipografia11").click(function() {
 $("#tipografia12").click(function() {
     $(btnTipografiaChapa).html($("#tipografia12").html())
 })
+
+/*
+*Select Marca Celular 
+*/
 $("#marca1").click(function() {
     $(btnMarcaCelular).html($("#marca1").html())
 })
@@ -94,18 +109,30 @@ $("#marca3").click(function() {
     $("#optionsSamsung").css("display", "none")
     $("#optionsMotorola").css("display", "none")
 })
+
+/*
+*Select Material Funda 
+*/
 $("#material1").click(function() {
     $(btnMaterialFunda).html($("#material1").html())
 })
 $("#material2").click(function() {
     $(btnMaterialFunda).html($("#material2").html())
 })
+
+/*
+*Select Borde Funda 
+*/
 $("#borde1").click(function() {
     $(btnBordeFunda).html($("#borde1").html())
 })
 $("#borde2").click(function() {
     $(btnBordeFunda).html($("#borde2").html())
 })
+
+/*
+*Select Modelos Samsung 
+*/
 $("#samsung1").click(function() {
     $(btnSamsung).html($("#samsung1").html())
 })
@@ -130,6 +157,10 @@ $("#samsung7").click(function() {
 $("#samsung8").click(function() {
     $(btnSamsung).html($("#samsung8").html())
 })
+
+/*
+*Select Modelo Motorola 
+*/
 $("#motorola1").click(function() {
     $(btnMotorola).html($("#motorola1").html())
 })
@@ -145,6 +176,10 @@ $("#motorola4").click(function() {
 $("#motorola5").click(function() {
     $(btnMotorola).html($("#motorola5").html())
 })
+
+/*
+*Select Modelo Iphone 
+*/
 $("#iphone1").click(function() {
     $(btnIphone).html($("#iphone1").html())
 })
@@ -239,11 +274,41 @@ const addChapaToCart = () => {
     productoChapa.showInCart()
 }
 
+/* const restaurar = () => {
+    $(btnModeloChapa).text() = "Modelo Chapa"
+} */
+
 const verificarSeleccionChapa = () => {
     if ( $(btnModeloChapa).text().trim() == "Modelo Chapa" || $(btnTamanioChapa).text().trim() == "Tamaño Chapa" ||
     $(btnTipografiaChapa).text().trim() == "Tipografía" || $("#nombreMascota").val() == "" ) {
         swal("Por Favor, Selecciona una opción de cada selector")       
     } else {
         addChapaToCart()
+        /* restaurar() */
+    }
+}
+
+/*
+*Confirmar Pedido 
+*/
+
+const confirmarPedido = () => {
+    //Acciones en el modal
+    $(modalBody).text("")
+    $("#modalCarrito").modal('toggle')
+    $(btnCarrito).attr('data-target', '')
+    //Procesar pedido
+    for (i=0; i<productosCarrito.length; i++) {
+        console.log(productosCarrito[i].articulo)
+        if (productosCarrito[i].articulo == "Funda" ){
+            console.log("compraste una Funda")
+            const articuloFunda = `<div>Funda Personalizada para ${productosCarrito[i].modelo} con funda ${productosCarrito[i].materialFunda} y borde ${productosCarrito[i].bordeFunda}</div>`
+            $("#pedidoConfirmado").append(articuloFunda)
+        } else if (productosCarrito[i].articulo == "Chapa" ){
+            console.log("compraste una Chapa")
+            const articuloChapa = `<div>Chapa Personalizada de ${productosCarrito[i].modelo}, de tamaño ${productosCarrito[i].tamanio} y tipografia ${productosCarrito[i].tipografia}</div>`
+            $("#pedidoConfirmado").append(articuloChapa)
+        }
+        $(document).append(articuloFunda)
     }
 }
