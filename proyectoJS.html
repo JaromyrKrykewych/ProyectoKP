@@ -7,7 +7,7 @@
     <meta name="description" content="Vos tenés tu esencia, nosotros la materializamos, Fundas y Chapas personalizadas realizadas a tu estilo">
     <meta name="keywords" content="proyectokp, javascript, carrito, compras, personalización, técnica, de, sublimación, fundas, personalizadas, para, celulares, chapas, mascotas, popsockets, kiwik, Samsung, Morotola, Iphone, perros, cachorros">
     <title>Tu Pedido - KIWIK</title>
-    <!--CSS Bootstrap-->
+	<!--CSS Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!--Mi CSS-->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -58,10 +58,12 @@
 		<h1>Kiwik Perzonalización</h1>
 	</div>
 	<div id="pasoUno">
-		<h3>Ingresa tu Usuario</h3>
+		<h3>Ingresa un Usuario y Mail para procesar tu pedido</h3>
 		<input type="text" id="usuario" placeholder="Ingresa tu nombre">
+		<input type="email" id="mailUsuario" placeholder="usuario@gmail.com">
 		<input type="button" id="ingresoUsuario" value="Ingresar">
 	</div>
+	
 	
 	<!--Muestra Productos-->
 	<div class="titulo__seccion">
@@ -70,6 +72,7 @@
 	<div class="mostrarProductos">
 		<div class="mostrarFundas" id="container-funda">
 			<h3>Fundas Personalizadas</h3>
+			<p>$600 c/u</p>
 			<label for="">Marca Celular</label>
 			<div class="dropdown">
 				<button class="btn dropdown-toggle" type="button" id="selectMarcaCelular" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -145,6 +148,7 @@
 		</div>
 		<div class="mostrarChapas" id="container-chapa">
 			<h3>Chapas Personalizadas</h3>
+			<p>$250 c/u</p>
 			<label for="">Modelo Chapa</label>
 			<div class="dropdown">
 				<button class="btn dropdown-toggle" type="button" id="selectModeloChapa" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -216,19 +220,28 @@
 						
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" id="confirmarPedido" class="btn btn-primary">Save changes</button>
+						<button type="button" id="confirmarPedido" class="btn btn-primary">Confirmar Pedido</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class="divBtnPedidoConfirmado">
+		<div class="mensajeParaCliente" id="mensajeParaCliente" style="display: none;"></div>
+		<button class="btn btnPedidoConfirmado" type="button" data-toggle="collapse" id="btnPedidoConfirmado" data-target="#divPedidoConfirmado" aria-expanded="false" aria-controls="collapseExample" style="display: none">
+		  	Pedido Confirmado
+		</button>
+	</div>
+	<div class="collapse" id="divPedidoConfirmado">
+		<div class="card card-body">
+			<div id="total"></div>	
+		</div>
+		
+	</div>
 	<div class="msjPopsocket">
 		<p>Proximamente podrás agregar a tu pedido popsockets para acompañar tu funda</p>
 	</div>
 
-<!--Pedido Confirmado-->
-<div id="pedidoConfirmado"></div>
 <!--Footer-->				
 <footer class="page-footer font-small pt-4 bg-dark bloque__footer">
     <div class="container-fluid">

@@ -1,4 +1,5 @@
 let usuarioName = ""
+let usuarioEmail = ""
 
 $("#ingresoUsuario").click(guardarUsuario) //Funcionó
 
@@ -31,24 +32,21 @@ $(btnCarrito).click(function(e) {
     }     
 })
 
-
-
 /*
 *Agregar productos a carrito de compra 
 */
 let btnFunda = $("#addToCart-Funda")
 let btnChapa = $("#addToCart-Chapa") 
-const productosCarrito = []
+let productosCarrito = []
 
 $(btnFunda).click(verificarSeleccionFunda)
 $(btnChapa).click(verificarSeleccionChapa)
 
-/* 
-*Eliminar productos del Carrito 
-*/
-
 /*
 *Confirmar Pedido 
 */
+let TOTAL = 0;
 
-$("#confirmarPedido").click(confirmarPedido)
+$("#confirmarPedido").click(verificarUsuario)
+
+

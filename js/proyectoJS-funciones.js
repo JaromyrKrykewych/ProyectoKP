@@ -1,5 +1,10 @@
 function guardarUsuario() {
     usuarioName = $("#usuario").val()
+    usuarioEmail = $("#mailUsuario").val()
+    
+    const regex = new RegExp('\\S+@\\S+\\.\\S+');
+
+    if (!regex.test(usuarioEmail)){return}
 
     $("#pasoUno").hide()
 }
@@ -199,33 +204,55 @@ $("#iphone6").click(function() {
     $(btnIphone).html($("#iphone6").html())
 })
 
-/* const restaurarSelectoresFunda = () => {
-    $(btnMarcaCelular).text() = "Marca Celular"
-    $(btnMaterialFunda).text() = "Material Funda"
-    $(btnBordeFunda).text() = "Borde Funda"
-    $(btnSamsung).text() = "Modelo Samsung"
-    $(btnMotorola).text() = "Modelo Motorola"
-    $(btnIphone).text() = "Modelo Iphone"
-} */
+
+const deleteProductFromCart = (e) => {
+    const id = e.target.parentElement.getAttribute('data-productid')
+    let index = 0
+    productosCarrito.forEach((item, i) => {
+        if (item.parentId === id) index = i
+    })
+    productosCarrito.splice(index, 1)
+    document.getElementById("articulosCarrito").removeChild(e.target.parentElement)
+}
+
+ const restaurarSelectoresFunda = () => {
+    $(btnMarcaCelular).text("Marca Celular") 
+    $(btnMaterialFunda).text("Material Funda") 
+    $(btnBordeFunda).text("Borde Funda") 
+    $(btnSamsung).text("Modelo Samsung") 
+    $(btnMotorola).text("Modelo Motorola") 
+    $(btnIphone).text("Modelo Iphone")
+}
+
+const restaurarSelectoresChapa = () => {
+    $(btnModeloChapa).text("Modelo Chapa")
+    $(btnTamanioChapa).text("Tamaño Chapa")
+    $(btnTipografiaChapa).text("Tipografía")
+    $("#nombreMascota").val("") 
+}
 
 const addFundaToCart = () => {
     const productoFunda = {
+        productId: Math.floor(Math.random() * Math.floor(1000)),
         articulo: 'Funda',
+        precio: 600,
         marca : $(btnMarcaCelular).text(),
         modelo : '',
         materialFunda : $(btnMaterialFunda).text(),
         bordeFunda : $(btnBordeFunda).text(),
         showInCart : showFundaInCart = () => {
             const articulo = 
-                `<div class="divProductInCart">
+                `<div class="divProductInCart" data-productid="${productoFunda.productId}">
                     <h1>${productoFunda.articulo} Perzonalizada</h1>
+                    <p>$${productoFunda.precio}</p>
                     <div>Marca de Celular:<br> ${productoFunda.marca}</div>
                     <div>Modelo:<br> ${productoFunda.modelo}</div>
                     <div>Material de Funda:<br> ${productoFunda.materialFunda}</div>
                     <div>Borde de Funda:<br> ${productoFunda.bordeFunda}</div>
-                    <input type="button" value="X">
+                    <input type="button" class="btnBorrarProducto" value="X">
                 </div>`
                 $("#articulosCarrito").append(articulo)
+                $("#articulosCarrito .btnBorrarProducto").click(deleteProductFromCart)
         } 
     }
     if ( $(btnMarcaCelular).html() == "Samsung" ) {
@@ -238,45 +265,54 @@ const addFundaToCart = () => {
 
     productosCarrito.push(productoFunda)
     productoFunda.showInCart()
-}
-
-const verificarSeleccionFunda = () => {
-    if ( $(btnMarcaCelular).text().trim() == "Marca Celular" || $(btnSamsung).text().trim() == "Modelo Samsung" &&
-    $(btnMotorola).text().trim() == "Modelo Motorola" && $(btnIphone).text().trim() == "Modelo Iphone" ||
-    $(btnMaterialFunda).text().trim() == "Material Funda" || $(btnBordeFunda).text().trim() == "Borde Funda") {
-        swal("Por Favor, Selecciona una opción de cada selector")
-    } else {
-        addFundaToCart()
-    }
+    restaurarSelectoresFunda()
+    swal({
+        icon: "success",
+      });  
 }
 
 const addChapaToCart = () => {
     const productoChapa = {
+        productId: Math.floor(Math.random() * Math.floor(1000)),
         articulo: 'Chapa',
+        precio: 250,
         modelo : $(btnModeloChapa).text(),
         tamanio : $(btnTamanioChapa).text(),
         tipografia: $(btnTipografiaChapa).text(),
         mascota: $("#nombreMascota").val(),
         showInCart : showChapaInCart = () => {
             const articulo = 
-                `<div class="divProductInCart">
+                `<div class="divProductInCart data-productid="${productoChapa.productId}">
                     <h1>${productoChapa.articulo} Perzonalizada</h1>
+                    <p>$${productoChapa.precio}</p>
                     <div>Modelo:<br> ${productoChapa.modelo}</div>
                     <div>Tamaño Chapa:<br> ${productoChapa.tamanio}</div>
                     <div>Tipografía:<br> ${productoChapa.tipografia}</div>
                     <div>Tu Mascota se llama:<br> ${productoChapa.mascota}</div>
-                    <input type="button" value="X">
+                    <input type="button" class="btnBorrarProducto" value="X">
                 </div>`
-                $("#articulosCarrito").append(articulo)    
+                $("#articulosCarrito").append(articulo)
+                $("#articulosCarrito .btnBorrarProducto").click(deleteProductFromCart)    
         }
     }
     productosCarrito.push(productoChapa)
     productoChapa.showInCart()
 }
 
-/* const restaurar = () => {
-    $(btnModeloChapa).text() = "Modelo Chapa"
-} */
+const verificarSeleccionFunda = () => {
+    if (
+        $(btnMarcaCelular).text().trim() == "Marca Celular" || 
+        $(btnSamsung).text().trim() == "Modelo Samsung" &&
+        $(btnMotorola).text().trim() == "Modelo Motorola" && 
+        $(btnIphone).text().trim() == "Modelo Iphone" ||
+        $(btnMaterialFunda).text().trim() == "Material Funda" || 
+        $(btnBordeFunda).text().trim() == "Borde Funda"
+    ) {
+        swal("Por Favor, Selecciona una opción de cada selector")
+    } else {
+        addFundaToCart()
+    }
+} 
 
 const verificarSeleccionChapa = () => {
     if ( $(btnModeloChapa).text().trim() == "Modelo Chapa" || $(btnTamanioChapa).text().trim() == "Tamaño Chapa" ||
@@ -284,7 +320,10 @@ const verificarSeleccionChapa = () => {
         swal("Por Favor, Selecciona una opción de cada selector")       
     } else {
         addChapaToCart()
-        /* restaurar() */
+        restaurarSelectoresChapa()
+        swal({
+            icon: "success",
+          });
     }
 }
 
@@ -293,22 +332,46 @@ const verificarSeleccionChapa = () => {
 */
 
 const confirmarPedido = () => {
-    //Acciones en el modal
+    
     $(modalBody).text("")
     $("#modalCarrito").modal('toggle')
     $(btnCarrito).attr('data-target', '')
-    //Procesar pedido
+    $(btnPedidoConfirmado).css('display', 'block')
+    $("#mensajeParaCliente").css('display', 'block')
+    
     for (i=0; i<productosCarrito.length; i++) {
-        console.log(productosCarrito[i].articulo)
         if (productosCarrito[i].articulo == "Funda" ){
-            console.log("compraste una Funda")
-            const articuloFunda = `<div>Funda Personalizada para ${productosCarrito[i].modelo} con funda ${productosCarrito[i].materialFunda} y borde ${productosCarrito[i].bordeFunda}</div>`
-            $("#pedidoConfirmado").append(articuloFunda)
+            const articuloFunda = 
+            `<div class="funda-agregada">
+                <div>Funda Personalizada</div>
+                <div>Modelo Celular: ${productosCarrito[i].modelo}</div>
+                <div>Especificaciones: Material ${productosCarrito[i].materialFunda} y borde ${productosCarrito[i].bordeFunda}</div>
+                <div>SubTotal: $${productosCarrito[i].precio}</div>
+            </div>`
+            $("#divPedidoConfirmado .card").append(articuloFunda)
         } else if (productosCarrito[i].articulo == "Chapa" ){
-            console.log("compraste una Chapa")
-            const articuloChapa = `<div>Chapa Personalizada de ${productosCarrito[i].modelo}, de tamaño ${productosCarrito[i].tamanio} y tipografia ${productosCarrito[i].tipografia}</div>`
-            $("#pedidoConfirmado").append(articuloChapa)
-        }
-        $(document).append(articuloFunda)
+            const articuloChapa = 
+            `<div class="chapa-agregada">
+                <div>Chapa Personalizada para ${productosCarrito[i].mascota}</div>
+                <div>Modelo de Chapa: ${productosCarrito[i].modelo}</div>
+                <div>Especificaciones: Tamaño ${productosCarrito[i].tamanio} y tipografia ${productosCarrito[i].tipografia}</div>
+                <div>SubTotal: $${productosCarrito[i].precio}</div>
+            </div>`
+            $("#divPedidoConfirmado .card").append(articuloChapa)
+        } 
+        $("#mensajeParaCliente").text("Gracias " + usuarioName + ", enviamos un correo electrónico con los datos de tu pedido a tu email: " + usuarioEmail)
+         TOTAL += productosCarrito[i].precio;
+    }
+
+    $("#total").text("Total: " + TOTAL)
+    productosCarrito = []
+}
+
+function verificarUsuario() {
+    if (usuarioName == "" || usuarioEmail == "") {
+        swal("Por Favor, debes ingresar un nombre de usuario y un email para procesar tu pedido")
+    } else {
+        confirmarPedido()
     }
 }
+

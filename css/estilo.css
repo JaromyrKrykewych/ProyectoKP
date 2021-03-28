@@ -531,6 +531,8 @@ body {
     grid-template-rows: repeat(9, auto);
     grid-gap: 15px;
     justify-content: center; }
+    .mostrarProductos .mostrarFundas p {
+      text-align: center; }
     .mostrarProductos .mostrarFundas h3 {
       text-align: center;
       font-size: 35px; }
@@ -551,6 +553,8 @@ body {
     grid-template-rows: repeat(9, auto);
     grid-gap: 15px;
     justify-content: center; }
+    .mostrarProductos .mostrarChapas p {
+      text-align: center; }
     .mostrarProductos .mostrarChapas h3 {
       text-align: center;
       font-size: 35px; }
@@ -574,6 +578,33 @@ body {
   #pasoUno input {
     padding: 0px 10px; }
 
+.divBtnPedidoConfirmado .mensajeParaCliente {
+  padding: 15px;
+  font-size: 30px; }
+
+.divBtnPedidoConfirmado .btnPedidoConfirmado {
+  background-color: #a3ce43;
+  padding: 15px;
+  font-size: 30px; }
+
+#divPedidoConfirmado .card {
+  background-color: #a3ce43;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 15px; }
+  #divPedidoConfirmado .card .funda-agregada {
+    box-shadow: 1px 1px 1px;
+    background-color: #5b8109;
+    padding: 10px; }
+  #divPedidoConfirmado .card .chapa-agregada {
+    box-shadow: 1px 1px 1px;
+    background-color: #5b8109;
+    padding: 10px; }
+  #divPedidoConfirmado .card #total {
+    text-align: right;
+    font-size: 40px;
+    padding-left: 20px; }
+
 .box_carrito {
   width: 300px;
   margin: 20px auto;
@@ -588,7 +619,7 @@ body {
     .box_carrito .modal-body .divProductInCart {
       background-color: #8cb929;
       display: grid;
-      grid-template-columns: 1fr 1fr 30px;
+      grid-template-columns: 1fr 1fr 80px;
       grid-template-rows: repeat(3, 1fr);
       font-size: 25px;
       justify-content: center;
@@ -605,9 +636,11 @@ body {
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 2; }
+      .box_carrito .modal-body .divProductInCart p {
+        padding-top: 20px; }
       .box_carrito .modal-body .divProductInCart input {
         box-shadow: 1px 1px 2px;
-        grid-row-start: 1;
+        grid-row-start: 2;
         grid-row-end: 4;
         grid-column-start: 3;
         grid-column-end: 4;
